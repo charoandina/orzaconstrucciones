@@ -19,12 +19,12 @@
         <div class="logo-container"><img src="img/logo-orza.png" alt=""></div>
         <div class="nav-list">
             <ul class="industry-regular">
-            <li class="active">INICIO</li>
-            <li onclick="showConstrucciones()">CONSTRUCCIONES</li>
-            <li>SERVICIOS</li>
-            <li>TRABAJOS</li>
-            <li>CONTACTO</li>
-        </ul>
+                <li id="inicio" class="active" onclick="showSection('hero')">INICIO</li>
+                <li id="construcciones" onclick="showSection('construcciones')">CONSTRUCCIONES</li>
+                <li id="servicios" onclick="showSection('servicios')">SERVICIOS</li>
+                <li id="trabajos" onclick="showSection('trabajos')">TRABAJOS</li>
+                <li id="contacto" onclick="showSection('contacto')">CONTACTO</li>
+            </ul>
         </div>
     </div>
 </div>
@@ -62,8 +62,8 @@
 
 <!--CONSTRUCCIONES-->
 <div id="construcciones-section" class="hide">
-    <div class="construcciones-container">
-        <h2 class="industry-bold">CONSTRUCCIONES</h2>
+    <div class="construcciones-container ">
+        <h2 class="industry-bold title">CONSTRUCCIONES</h2>
         <div class="proyectos-container">
             <!--Nombre Proyecto-->
             <div class="proyectos-lista">
@@ -99,19 +99,121 @@
             </div>
         </div>
     </div>
-
-
-
-
-
 </div>
 
+<!--SERVICIOS-->
+<div id="servicios-section" class="hide">
+    <div class="servicios-container">
+        <h2 class="industry-bold title">SERVICIOS</h2>
+        <div class="servicios-info-container ">
+            <ul class="industry-regular servicios-navbar">
+                <li class="active">DEMOLICIONES</li>
+                <li class="brd-left-no">MOVIMIENTO DE SUELO</li>
+                <li class="brd-left-no">EXCAVACIONES</li>
+            </ul>
+            <div class="servicios-info">
+                <!--DEMOLICIONES INFO-->
+                <div class="demoliciones-info" id="demoliciones-info">
+                    <div class="info-left">
+                        <div class="info-left-img-demoliciones">>
+                        </div>
+                        <div class="info-text-left">
+                            <p p class="montserrat-medium">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magni recusandae hic autem dolorum laboriosam quibusdam. Aperiam, laudantium ratione! Totam labore ex molestiae rem tenetur velit consectetur fugit qui. Explicabo, pariatur.</p>
+                            <p p class="montserrat-medium">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perspiciatis inventore, animi quos assumenda architecto tempore facilis, accusantium ratione maxime quo fugit doloribus quisquam, commodi officia mollitia! Deleniti pariatur hic numquam!</p>
+                        </div>
+                    </div>
+                    <div class="info-right">
+                        <div class="info-right-img-demoliciones">
+                        </div>
+                    </div>
+                </div>
 
+                <!--MOVIMIENTOS INFO-->
+                <div class="movimientos-info hide" id="movimientos-info">
+                    <div class="info-left">
+                        <div class="info-left-img-movimientos">
+                        </div>
+                        <div class="info-text-left">
+                            <p p class="montserrat-medium">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magni recusandae hic autem dolorum laboriosam quibusdam. Aperiam, laudantium ratione! Totam labore ex molestiae rem tenetur velit consectetur fugit qui. Explicabo, pariatur.</p>
+                            <p p class="montserrat-medium">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perspiciatis inventore, animi quos assumenda architecto tempore facilis, accusantium ratione maxime quo fugit doloribus quisquam, commodi officia mollitia! Deleniti pariatur hic numquam!</p>
+                        </div>
+                    </div>
+                    <div class="info-right">
+                        <div class="info-right-img-movimientos"> 
+                        </div>
+                    </div>
+                </div>
 
+                <!--EXCAVACIONES INFO-->
+                <div class="excavaciones-info hide" id="excavaciones-info">
+                    <div class="info-left">
+                        <div class="info-left-img-excavaciones">
+                        </div>
+                        <div class="info-text-left">
+                            <p p class="montserrat-medium">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magni recusandae hic autem dolorum laboriosam quibusdam. Aperiam, laudantium ratione! Totam labore ex molestiae rem tenetur velit consectetur fugit qui. Explicabo, pariatur.</p>
+                            <p p class="montserrat-medium">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perspiciatis inventore, animi quos assumenda architecto tempore facilis, accusantium ratione maxime quo fugit doloribus quisquam, commodi officia mollitia! Deleniti pariatur hic numquam!</p>
+                        </div>
+                    </div>
+                    <div class="info-right-img-excavaciones">
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class="servicios-text industry-regular">
+            <p>
+            En <span class="industry-bold">ORZA</span>, estamos presentes <span class="industry-bold">desde 2011</span> desarrollando proyectos y haciendo realidad ideas.
+        </p>
+        </div>
+    </div>
+</div>
 
+<!--TRABAJOS-->
+<div id="trabajos-section" class="hide">
+    <div class="servicios-container">
+        <h2 class="industry-bold title">TRABAJOS</h2>
+       
+    </div>
+</div>
 
+<!--CONTACTO-->
+<div id="contacto-section" class="hide">
+    <div class="servicios-container">
+        <h2 class="industry-bold title">CONTACTO</h2>
+       
 
+    </div>
+</div>
 
+<!--FOOTER-->
+<footer class="industry-medium">
+<div class="orza-info">
+    <div>
+        <img src="img/call.png" alt="">
+        <p>(011) 4770-1079</p>
+    </div>
+    <div>
+        <img src="img/mail.png" alt="">
+        <p>orzaconstruccionessa@gmail.com</p>
+        <p>orza@hotmail.com</p>
+        <p></p>
+    </div>
+    <div>
+        <img src="img/ad_units.png" alt="">
+        <p>(+54911) 3386-3757</p>
+    </div>
+</div>
+<div class="copy-info">
+    <div>
+        <p>Copyright © Orza Construcciones S.A. 2025</p>
+    </div>
+    <div class="noob-info">
+        <p>Development by</p>
+        <img src="img/n00b 1.png" alt="">
+    </div>
+</div>
+
+</footer>
 
 
 
