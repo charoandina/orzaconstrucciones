@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/font.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <title>Orza Construcciones</title>
 </head>
@@ -16,14 +17,14 @@
 <!--NAVBAR-->
 <div class="navbar-container montserrat-regular">
     <div class="navbar">
-        <div class="logo-container"><img src="img/logo-orza.png" alt=""></div>
+        <div class="logo-container"><a href="index.html"><img src="img/logo-orza.png" alt=""></a></div>
         <div class="nav-list">
             <ul class="industry-regular">
                 <li id="inicio" class="active" onclick="showSection('hero')">INICIO</li>
                 <li id="construcciones" onclick="showSection('construcciones')">CONSTRUCCIONES</li>
                 <li id="servicios" onclick="showSection('servicios')">SERVICIOS</li>
                 <li id="trabajos" onclick="showSection('trabajos')">TRABAJOS</li>
-                <li id="contacto" onclick="showSection('contacto')">CONTACTO</li>
+                <li id="nosotros" onclick="showSection('nosotros')">NOSOTROS</li>
             </ul>
         </div>
     </div>
@@ -37,7 +38,7 @@
             <h1 class="industry-bold">ORZA</h1>
             <h2 class="industry-bold">CONSTRUCCIONES</h2>
             <p class="montserrat-thin">“Proyectos diseñados para durar, construidos con precisión y atención al detalle.”</p>
-            <button class="montserrat-regular btn1">Contactanos</button>
+            <button class="montserrat-regular btn1" id="boton-home">Contactanos</button>
         </div>
     </div>
 
@@ -58,6 +59,41 @@
             </div>
         </div>
     </div>
+
+    <!--CONTACTANOS-->
+    <div class="contacto-form" id="contacto-hero">
+        <h2 class="industry-bold title">CONTACTANOS</h2>
+        <div class="contacto-form-container">
+            <div class="form-container">
+                <form action="">
+                    <input type="text" placeholder="Nombre*" class="montserrat-regular">
+                    <input type="text" placeholder="Email*" class="montserrat-regular">
+                    <input type="text" placeholder="Teléfono*" class="montserrat-regular">
+                    <textarea name="" id="" placeholder="Mensaje*" class="montserrat-regular"></textarea>
+                </form>
+            </div>
+            <div class="orza-info-contacto">
+                <div>
+                    <img src="img/mail.png" alt="">
+                    <p class="industry-regular">orzaconstruccionessa@gmail.com</p>
+                    <p class="industry-regular">orza@hotmail.com</p>
+                </div>
+                <div>
+                    <img src="img/call.png" alt="">
+                    <p class="industry-regular">(011) 4770-1079</p>
+                </div>
+                <div>
+                    <img src="img/location_on.png" alt="">
+                    <p class="industry-regular">Burela 3055- Piso 6º - C.A.B.A. (C1431EHM)</p>
+                </div>
+                <div>
+                    <img src="img/ad_units.png" alt="">
+                    <p class="industry-regular">(+54911) 3386-3757</p>
+                </div>
+            </div>
+        </div>
+        <button type="" class="form-button industry-medium">Enviar</button>
+    </div>
 </div>
 
 <!--CONSTRUCCIONES-->
@@ -67,6 +103,18 @@
         <div class="proyectos-container">
             <!--Nombre Proyecto-->
             <div class="proyectos-lista">
+                <div class="proyecto-nombre proyecto-active"> 
+                    <h3 class="industry-regular"><span class="industry-bold">01.</span> PROYECTO BURELA</h3>
+                    <img src="img/arrow_back.png" alt="" id="arrow-img">
+                </div>
+                <div class="proyecto-nombre"> 
+                    <h3 class="industry-regular"><span class="industry-bold">01.</span> PROYECTO BURELA</h3>
+                    <!--<img src="" alt="" id="arrow-img">-->
+                </div>
+                <div class="proyecto-nombre"> 
+                    <h3 class="industry-regular"><span class="industry-bold">01.</span> PROYECTO BURELA</h3>
+                    <!--<img src="" alt="" id="arrow-img">-->
+                </div>
                 <div class="proyecto-nombre"> 
                     <h3 class="industry-regular"><span class="industry-bold">01.</span> PROYECTO BURELA</h3>
                     <!--<img src="" alt="" id="arrow-img">-->
@@ -170,19 +218,220 @@
 
 <!--TRABAJOS-->
 <div id="trabajos-section" class="hide">
-    <div class="servicios-container">
+    <div class="trabajosrealizados-container">
         <h2 class="industry-bold title">TRABAJOS</h2>
-       
+        <div class="collapsable-list">
+            <!--2024-->
+            <div class="item-container brd-top-no">
+                <div class="year-container industry-regular">
+                    <p>2024</p>
+                </div>
+                <div class="year-answer hide" id="year-2024">
+
+                </div>
+            </div>
+            <!--2023-->
+            <div class="item-container">
+                <div class="year-container industry-regular">
+                    <p>2023</p>
+                </div>
+                <div class="year-answer hide" id="year-2023">
+                    
+                </div>
+            </div>
+            <!--2022-->
+            <div class="item-container">
+                <div class="year-container industry-regular">
+                    <p>2022</p>
+                </div>
+                <div class="year-answer hide" id="year-2022">
+
+                </div>
+            </div>
+            <!--2021-->
+            <div class="item-container">
+                <div class="year-container industry-regular">
+                    <p>2021</p>
+                </div>
+                <div class="year-answer hide"id="year-2021">
+                    
+                </div>
+            </div>
+            <!--2020-->
+            <div class="item-container">
+                <div class="year-container industry-regular">
+                    <p>2020</p>
+                </div>
+                <div class="year-answer hide" id="year-2020">
+                    
+                </div>
+            </div>
+            <!--2019-->
+            <div class="item-container">
+                <div class="year-container industry-regular">
+                    <p>2019</p>
+                </div>
+                <div class="year-answer hide"id="year-2019" >
+                    
+                </div>
+            </div>
+            <!--2018-->
+            <div class="item-container">
+                <div class="year-container industry-regular">
+                    <p>2018</p>
+                </div>
+                <div class="year-answer hide" id="year-2018">
+                    
+                </div>
+            </div>
+            <!--2017-->
+            <div class="item-container">
+                <div class="year-container industry-regular">
+                    <p>2017</p>
+                </div>
+                <div class="year-answer hide" id="year-2017">
+                    
+                </div>
+            </div>           
+            <!--2016-->
+            <div class="item-container">
+                <div class="year-container industry-regular">
+                    <p>2016</p>
+                </div>
+                <div class="year-answer hide"id="year-2016">
+                    
+                </div>
+            </div>
+        </div>
+
+
+        <!--TRABAJOS REALIZADOS 2DA SECCION-->
+        <div class="trabajos-second-section"> 
+            <div class="trabajos-second-container">
+                <div class="construccion-burela">
+                    <h3 class="industry-bold">CONSTRUCCION</h3>
+                    <p class="industry-medium">Proyecto Burela</p>
+                </div>
+                <div class="demolicion-elcano">
+                    <h3 class="industry-bold">DEMOLICION</h3>
+                    <p class="industry-medium">Av. Elcano 5024</p>
+                </div>
+                <div class="construccion-aviles">
+                    <h3 class="industry-bold">CONSTRUCCION</h3>
+                    <p class="industry-medium">Proyecto Aviles</p>
+                </div>
+            </div>
+            <div class="trabajos-second-container">
+                <div class="excavacion-construye">
+                    <h3 class="industry-bold">EXCAVACION</h3>
+                    <p class="industry-medium">AB CONSTRUYE SRL</p>
+                </div>
+                <div class="construccion-loreto">
+                    <h3 class="industry-bold">CONSTRUCCION</h3>
+                    <p class="industry-medium">Proyecto Virrey Loreto</p>
+                </div>
+                <div class="demolicion-realtor">
+                    <h3 class="industry-bold">DEMOLICION</h3>
+                    <p class="industry-medium">Total Realtor S.R.L</p>
+                </div>
+            </div>
+        </div>
+
     </div>
 </div>
 
-<!--CONTACTO-->
-<div id="contacto-section" class="hide">
-    <div class="servicios-container">
-        <h2 class="industry-bold title">CONTACTO</h2>
-       
-
+<!--NOSOTROS-->
+<div id="nosotros-section" class="hide">
+    <div class="sobrenosotros-container">
+        <h2 class="industry-bold title">SOBRE NOSOTROS</h2>
+        <div class="nosotros-container">
+            <div class="nosotros-left">
+                <div class="nosotros-left-img"></div>
+                <p class="industry-bold">DESDE EL 2011 REALIZAMOS TRABAJOS CON EXITO Y CALIDAD</p>
+            </div>
+            <div class="nosotros-right">
+                <div class="images-nosotros-right">
+                    <div class="nosotros-right-img1"></div>
+                    <div class="nosotros-right-img2"></div>
+                </div>
+                <div class="text-right montserrat-regular">
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum minima, id sint porro voluptatem, ad atque totam laborum saepe ea obcaecati architecto dignissimos enim, numquam laudantium accusamus ab eum reprehenderit.</p>
+                </div>
+                <div class="extra-rigth-container">
+                    <div>
+                        <h4 class="montserrat-bold">100+</h4>
+                        <p class="montserrat-regular">Proyectos completados</p>
+                    </div>
+                    <div>
+                        <h4 class="montserrat-bold">70+</h4>
+                        <p class="inter-regular">Clientes satisfechos</p>
+                    </div>
+                    <div>
+                        <h4 class="montserrat-bold">10+</h4>
+                        <p class="inter-regular">Años de experiencia</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+    
+    
+    <!--EMPRESAS COLABORATIVAS-->
+    <div class="empresas-container">
+        <h3 class="industry-bold">EMPRESAS COLABORATIVAS</h3>
+        <div class="carousel">
+            <div class="carousel-track">
+              <img src="img/carousel1.png" alt="Imagen 1">
+              <img src="img/carousel2.png" alt="Imagen 2">
+              <img src="img/carousel3.png" alt="Imagen 3">
+              <img src="img/carousel4.png" alt="Imagen 4">
+              <img src="img/carousel5.png" alt="Imagen 5">
+              <img src="img/carousel6.png" alt="Imagen 1">
+              <img src="img/carousel7.png" alt="Imagen 2">
+              <img src="img/carousel8.png" alt="Imagen 3">
+              <img src="img/carousel9.png" alt="Imagen 4">
+              <img src="img/carousel10.png" alt="Imagen 5">
+              <img src="img/carousel11.png" alt="Imagen 5">
+            </div>
+        </div>
+    </div>
+
+
+    <!--CONTACTANOS-->
+    <div class="contacto-form">
+        <h2 class="industry-bold title">CONTACTANOS</h2>
+        <div class="contacto-form-container">
+            <div class="form-container">
+                <form action="">
+                    <input type="text" placeholder="Nombre*" class="montserrat-regular">
+                    <input type="text" placeholder="Email*" class="montserrat-regular">
+                    <input type="text" placeholder="Teléfono*" class="montserrat-regular">
+                    <textarea name="" id="" placeholder="Mensaje*" class="montserrat-regular"></textarea>
+                </form>
+            </div>
+            <div class="orza-info-contacto">
+                <div>
+                    <img src="img/mail.png" alt="">
+                    <p class="industry-regular">orzaconstruccionessa@gmail.com</p>
+                    <p class="industry-regular">orza@hotmail.com</p>
+                </div>
+                <div>
+                    <img src="img/call.png" alt="">
+                    <p class="industry-regular">(011) 4770-1079</p>
+                </div>
+                <div>
+                    <img src="img/location_on.png" alt="">
+                    <p class="industry-regular">Burela 3055- Piso 6º - C.A.B.A. (C1431EHM)</p>
+                </div>
+                <div>
+                    <img src="img/ad_units.png" alt="">
+                    <p class="industry-regular">(+54911) 3386-3757</p>
+                </div>
+            </div>
+        </div>
+        <button type="" class="form-button industry-medium">Enviar</button>
+    </div>
+
 </div>
 
 <!--FOOTER-->
