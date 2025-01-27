@@ -106,6 +106,62 @@ body{
     color: var(--bg-texto);
 }
 
+/* BURGER BAR */
+
+/* Ocultar el menú de navegación y mostrar el menú hamburguesa en pantallas pequeñas */
+.hamburger-menu {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+.nav-list {
+    display: flex;
+}
+
+.nav-list ul {
+    display: flex;
+}
+
+@media (max-width: 900px) {
+    .hamburger-menu {
+        display: block; /* Mostrar menú hamburguesa */
+    }
+
+    .nav-list {
+        display: none; /* Ocultar la lista */
+        flex-direction: column;
+        width: 100%;
+        background-color: #101010;
+        position: absolute;
+        top: 53px;
+        left: 0;
+        z-index: 1000;
+    }
+
+    .nav-list ul {
+        flex-direction: column; /* Cambiar la orientación de los elementos */
+    }
+
+    .nav-list ul li {
+        width: 100%;
+        border-right: none;
+        border-left: none;
+        cursor: pointer;
+    }
+
+    .nav-list ul li:hover {
+        background-color: var(--strokes-texto);
+        color: var(--bg-texto);
+    }
+
+    .nav-list.open {
+        display: flex; /* Mostrar la lista cuando el menú esté abierto */
+        height: 100px;
+    }
+}
+
 /* HERO */
 
 .hero-container{

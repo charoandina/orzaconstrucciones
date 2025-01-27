@@ -34,31 +34,36 @@ document.getElementById("boton-home").addEventListener("click", () => {
 
 /* FUNCIONAMIENTO NAVBAR SERVICIOS */
 document.addEventListener("DOMContentLoaded", () => {
-    const navItems = document.querySelectorAll(".servicios-navbar li");
-    const infoSections = document.querySelectorAll(".servicios-info > div");
+  const navItems = document.querySelectorAll(".nav-list li");
+  const navList = document.querySelector(".nav-list");
+  const hamburgerMenu = document.querySelector(".hamburger-menu");
 
-    navItems.forEach(item => {
-        item.addEventListener("click", () => {
-            // Elimina la clase "active" de todos los <li>
-            navItems.forEach(nav => nav.classList.remove("active"));
-            // Agrega la clase "active" al <li> clickeado
-            item.classList.add("active");
+  // Función para manejar el click en los elementos del navbar
+  navItems.forEach(item => {
+      item.addEventListener("click", () => {
+          // Elimina la clase "active" de todos los <li>
+          navItems.forEach(nav => nav.classList.remove("active"));
+          // Agrega la clase "active" al <li> clickeado
+          item.classList.add("active");
 
-            // Oculta todos los <div> con la clase "hide"
-            infoSections.forEach(section => section.classList.add("hide"));
+          // Cierra el menú hamburguesa (si está abierto)
+          if (navList.classList.contains("open")) {
+              navList.classList.remove("open");
+          }
+      });
+  });
 
-            // Muestra el <div> correspondiente según el texto del <li>
-            if (item.textContent.trim() === "DEMOLICIONES") {
-                document.getElementById("demoliciones-info").classList.remove("hide");
-            } else if (item.textContent.trim() === "MOVIMIENTO DE SUELO") {
-                document.getElementById("movimientos-info").classList.remove("hide");
-            } else if (item.textContent.trim() === "EXCAVACIONES") {
-                document.getElementById("excavaciones-info").classList.remove("hide");
-            }
-        });
-    });
+  // Función para abrir/cerrar el menú hamburguesa
+  hamburgerMenu.addEventListener("click", () => {
+      navList.classList.toggle("open");
+  });
 });
 
+/* BURGER NAVBAR
+function toggleMenu() {
+  const navList = document.querySelector('.nav-list');
+  navList.classList.toggle('open');
+}*/
 
 /* TRABAJOS POR AÑO - OBJECT + ARRAY */
 const trabajosPorAnio = {
