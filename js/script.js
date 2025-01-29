@@ -961,68 +961,69 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-/*---------ANIMATION CLOCK---------*/
-let allvalues = document.querySelectorAll(".value");
+/*---------ANIMATION CLOCK CON RESET---------*/
 
-allvalues.forEach((singleValue) => {
-  let startValue = 0;
-  let endValue = parseInt(singleValue.getAttribute("data-count"));
-  let duration = Math.floor(3000 / endValue);
+const nosotros = document.querySelector("#nosotros");
 
-  let counter = setInterval(function () {
-    startValue += 1;
-    singleValue.textContent = startValue;
-    if (startValue == endValue) {
-      clearInterval(counter);
-    }
-  }, duration);
-});
+function resetAnimation() {
+  let allvalues = document.querySelectorAll(".value");
+
+  allvalues.forEach((singleValue) => {
+    let startValue = 0;
+    let endValue = parseInt(singleValue.getAttribute("data-count"));
+    let duration = Math.floor(3000 / endValue);
+
+    clearInterval(singleValue.interval);
+
+    let counter = setInterval(function () {
+      startValue += 1;
+      singleValue.textContent = startValue;
+      if (startValue == endValue) {
+        clearInterval(counter);
+      }
+    }, duration);
+
+    singleValue.interval = counter;
+  });
+}
+
+// Agregar el event listener para el clic
+nosotros.addEventListener("click", resetAnimation);
+
+// Ejecutar la animación al cargar la página por primera vez
+resetAnimation();
+
 /*--------SCROLL ANIMATION--------*/
-function scrollW(el) {
+function isElementInViewport(el) {
+  if (!el) return false;
   const rect = el.getBoundingClientRect();
+
   return (
-    rect.top >= 0 &&
-    rect.left >= 0 &&
-    rect.bottom <=
-      (window.innerHeight || document.documentElement.clientHeight) &&
-    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    rect.top < (window.innerHeight || document.documentElement.clientHeight) &&
+    rect.bottom > 0
   );
 }
 
-// Function to add 'visible' class to the element
-function handleScroll() {
-  const formElement = document.querySelector(".contacto-form");
-  if (scrollW(formElement)) {
-    formElement.classList.add("visible");
+function handleScrollGeneric(selector) {
+  const element = document.querySelector(selector);
+  if (!element) {
+    return;
+  }
+
+  if (isElementInViewport(element)) {
+    element.classList.add("visible");
   }
 }
 
-// Listen for scroll events
-window.addEventListener("scroll", handleScroll);
+window.addEventListener("scroll", () => {
+  handleScrollGeneric(".contacto-form");
+  handleScrollGeneric(".bg2-image");
+  handleScrollGeneric(".proyectos-container");
+});
 
-// Initial check to see if the form is in the viewport on page load
-handleScroll();
-
-function scrollW2(el) {
-  const rect = el.getBoundingClientRect();
-  return (
-    rect.top >= 0 &&
-    rect.left >= 0 &&
-    rect.bottom <=
-      (window.innerHeight || document.documentElement.clientHeight) &&
-    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-  );
-}
-
-// Function to add 'visible' class to the element
-function handleScroll2() {
-  const formElement = document.querySelector(".bg2-image");
-  if (scrollW2(formElement)) {
-    formElement.classList.add("visible");
-  }
-}
-
-// Listen for scroll events
-window.addEventListener("scroll", handleScroll2);
-
-handleScroll2();
+// Run once on load
+document.addEventListener("DOMContentLoaded", () => {
+  handleScrollGeneric(".contacto-form");
+  handleScrollGeneric(".bg2-image");
+  handleScrollGeneric(".proyectos-container");
+});

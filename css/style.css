@@ -229,10 +229,12 @@ body {
   border-bottom: 1px solid var(--strokes-texto);
   border-top: 1px solid var(--strokes-texto);
   opacity: 0;
-  transition: opacity 2s ease-out;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
 }
 .bg2-image.visible {
   opacity: 1;
+  transform: translateY(0);
 }
 .section-2-container {
   display: flex;
@@ -338,8 +340,14 @@ body {
   margin: auto;
   margin-bottom: 40px;
   border: 1px solid var(--strokes-texto);
+  transform: translateY(40px);
+  opacity: 0;
+  transition: opacity 0.5s ease, transform 0.5s ease;
 }
-
+.proyectos-container.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 .proyectos-lista {
   width: 500px;
   overflow: hidden;
@@ -612,8 +620,9 @@ body {
   align-items: flex-start;
   gap: 20px;
   padding: 20px;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
 }
-
 .trabajo-container {
   display: flex;
   flex-direction: column;
@@ -845,10 +854,12 @@ body {
   flex-direction: column;
   margin: auto;
   opacity: 0;
-  transition: opacity 2s ease-out;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
 }
 .contacto-form.visible {
   opacity: 1;
+  transform: translateY(0);
 }
 .contacto-form-container {
   display: flex;
