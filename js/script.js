@@ -961,6 +961,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+/*-----------ANIMACIONES--------------*/
 /*---------ANIMATION CLOCK CON RESET---------*/
 
 const nosotros = document.querySelector("#nosotros");
@@ -1026,4 +1027,23 @@ document.addEventListener("DOMContentLoaded", () => {
   handleScrollGeneric(".contacto-form");
   handleScrollGeneric(".bg2-image");
   handleScrollGeneric(".proyectos-container");
+});
+/*------COLLAPSED LIST AÑOS----------*/
+document.querySelectorAll(".year-container").forEach((container) => {
+  container.addEventListener("click", function () {
+    const answer = this.nextElementSibling;
+    const isOpen = answer.classList.contains("show");
+
+    if (!isOpen) {
+      answer.classList.add("show");
+      answer.style.maxHeight = "0px";
+      requestAnimationFrame(() => {
+        answer.style.maxHeight = answer.scrollHeight + "px";
+      });
+    } else {
+      /*------------VER ACA PORQUE NO FUNCIONA---------*/
+      answer.style.maxHeight = "0px";
+      answer.classList.remove("show");
+    }
+  });
 });
