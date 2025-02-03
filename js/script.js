@@ -126,6 +126,69 @@ navItems.forEach((item, index) => {
   });
 });
 
+/* POP UP SERVICIOS */
+
+// Pop up Demoliciones
+// Seleccionar elementos demoliciones
+const popupDemoliciones = document.getElementById("demolicionesPopup");
+const closePopuppopupDemoliciones = document.getElementById("close-popup-demoliciones");
+const leftImgpopupDemoliciones = document.querySelector(".info-left-img-demoliciones");
+const rightImgpopupDemoliciones = document.querySelector(".info-right-img-demoliciones");
+
+// Función para mostrar el pop-up demoliciones
+function showPopupDemoliciones() {
+  popupDemoliciones.classList.remove("hide");
+}
+
+// Función para ocultar el pop-up demoliciones
+function hidePopupDemoliciones() {
+  popupDemoliciones.classList.add("hide");
+}
+
+// Mostrar el pop-up al hacer clic en las imágenes demoliciones
+leftImgpopupDemoliciones.addEventListener("click", showPopupDemoliciones);
+rightImgpopupDemoliciones.addEventListener("click", showPopupDemoliciones);
+
+// Cerrar el pop-up al hacer clic en el botón de cierre demoliciones
+closePopuppopupDemoliciones.addEventListener("click", hidePopupDemoliciones);
+
+// Cerrar el pop-up al hacer clic fuera del contenido demoliciones
+popupDemoliciones.addEventListener("click", (e) => {
+  if (e.target === popupDemoliciones) {
+    hidePopupDemoliciones();
+  }
+});
+
+// Pop up Movimientos
+// Seleccionar elementos
+const popupMovimientos = document.getElementById("moviemintoPopup");
+const closePopuppopupMovimientos = document.getElementById("close-popup-movimientos");
+const leftImgpopupMovimientos = document.querySelector(".info-left-img-movimientos");
+const rightImgpopupMovimientos = document.querySelector(".info-right-img-movimientos");
+
+// Función para mostrar el pop-up
+function showPopupMovimientos() {
+  popupMovimientos.classList.remove("hide");
+}
+
+// Función para ocultar el pop-up
+function hidePopupMovimientos() {
+  popupMovimientos.classList.add("hide");
+}
+
+// Mostrar el pop-up al hacer clic en las imágenes
+leftImgpopupMovimientos.addEventListener("click", showPopupMovimientos);
+rightImgpopupMovimientos.addEventListener("click", showPopupMovimientos);
+
+// Cerrar el pop-up al hacer clic en el botón de cierre
+closePopuppopupMovimientos.addEventListener("click", hidePopupMovimientos);
+
+// Cerrar el pop-up al hacer clic fuera del contenido
+popupMovimientos.addEventListener("click", (e) => {
+  if (e.target === popupMovimientos) {
+    hidePopupMovimientos();
+  }
+});
 
 
 /* TRABAJOS POR AÑO - OBJECT + ARRAY */
