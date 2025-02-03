@@ -65,6 +65,69 @@ function toggleMenu() {
   navList.classList.toggle('open');
 }*/
 
+
+/* CONSTRUCCIONES - FUNCION NAVBAR */
+// Obtener elementos de la lista de proyectos y contenedor padre
+const projectItems = document.querySelectorAll(".proyectos-lista .proyecto-nombre");
+const projectContainer = document.querySelector(".proyectos-lista");
+const projectInfoSections = document.querySelectorAll(".proyectos-info > div");
+
+// Guardar el orden original
+const originalOrder = Array.from(projectItems);
+
+projectItems.forEach((item, index) => {
+  item.addEventListener("click", () => {
+    // Quitar clase 'proyecto-active' y ocultar imágenes en todos los elementos
+    projectItems.forEach(el => {
+      el.classList.remove("proyecto-active");
+      el.querySelector(".arrow-img").classList.add("hide");
+    });
+
+    // Activar el proyecto seleccionado
+    item.classList.add("proyecto-active");
+
+    // Mostrar la imagen del proyecto seleccionado
+    const arrowImage = item.querySelector(".arrow-img");
+    if (arrowImage) arrowImage.classList.remove("hide");
+
+    // Restaurar el orden de los elementos
+    originalOrder.forEach(project => projectContainer.appendChild(project));
+
+    // Mover el elemento seleccionado al inicio
+    projectContainer.prepend(item);
+
+    // Ocultar todas las secciones de información
+    projectInfoSections.forEach(section => section.classList.add("hide"));
+
+    // Mostrar la sección de información correspondiente
+    const currentSection = projectInfoSections[index];
+    currentSection.classList.remove("hide");
+  });
+});
+
+/* SERVICIOS - FUNCION NAVBAR */
+// Selección de elementos
+const navItems = document.querySelectorAll('.servicios-navbar li');
+const infoSections = document.querySelectorAll('.servicios-info > div');
+
+// Mostrar la sección inicial
+document.getElementById('demoliciones-info').classList.remove('hide');
+
+// Agregar evento a cada elemento del menú
+navItems.forEach((item, index) => {
+  item.addEventListener('click', () => {
+    // Limpiar la clase activa y ocultar todas las secciones
+    navItems.forEach(nav => nav.classList.remove('active'));
+    infoSections.forEach(section => section.classList.add('hide'));
+
+    // Activar el ítem seleccionado y mostrar la sección correspondiente
+    item.classList.add('active');
+    infoSections[index].classList.remove('hide');
+  });
+});
+
+
+
 /* TRABAJOS POR AÑO - OBJECT + ARRAY */
 const trabajosPorAnio = {
   2024: [

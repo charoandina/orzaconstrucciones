@@ -359,12 +359,14 @@ body {
   border: 1px solid var(--strokes-texto);
   display: flex;
   flex-direction: column;
-  height: 200px;
+  height: 165px;
   justify-content: center;
+  position: relative;
+  cursor: pointer;
 }
 
 .proyecto-nombre h3 {
-  font-size: 43px;
+  font-size: 38px;
   margin: 20px;
   width: 80%;
 }
@@ -373,11 +375,11 @@ body {
   font-size: 45px;
 }
 
-#arrow-img {
+.arrow-img {
   width: 50px;
-  margin-left: auto;
-  margin-right: 20px;
-  margin-bottom: 20px;
+  position: absolute;
+  left: 85%;
+  bottom: 10%;
 }
 
 .proyectos-info {
@@ -388,27 +390,30 @@ body {
 
 .imagenes-proyecto-container {
   display: flex;
-  width: 100%;
+  max-width: 700px;
+  width: 700px;
   background-color: var(--strokes-texto);
   gap: 2px;
-  max-height: 441px;
+  max-height: 450px;
+  height: 450px;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
-.imagen-principal-container {
-  max-width: 400px;
+.proyecto-burela {
+  background-image: url(../img/burela-full.png);
 }
 
-.imagen-principal-container img {
-  width: 100%;
+.proyecto-virreyloreto {
+    background-image: url(../img/virreyloreto-full.png);
 }
 
-.imagenes-secundarias-container {
-  max-width: 298px;
+.proyecto-aviles{
+    background-image: url(../img/aviles-full.png);
 }
 
-.imagenes-secundarias-container img {
-  width: 100%;
-  height: 144px;
+.proyecto-zabala{
+    background-image: url(../img/zabala-full.png);
 }
 
 .info-proyecto-container {
