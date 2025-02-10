@@ -341,13 +341,10 @@ body {
   margin-bottom: 60px;
   border: 1px solid var(--strokes-texto);
   transform: translateY(40px);
-  opacity: 0;
+
   transition: opacity 0.5s ease, transform 0.5s ease;
 }
-.proyectos-container.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
+
 .proyectos-lista {
   width: 500px;
   overflow: hidden;
@@ -405,15 +402,15 @@ body {
 }
 
 .proyecto-virreyloreto {
-    background-image: url(../img/virreyloreto-full.png);
+  background-image: url(../img/virreyloreto-full.png);
 }
 
-.proyecto-aviles{
-    background-image: url(../img/aviles-full.png);
+.proyecto-aviles {
+  background-image: url(../img/aviles-full.png);
 }
 
-.proyecto-zabala{
-    background-image: url(../img/zabala-full.png);
+.proyecto-zabala {
+  background-image: url(../img/zabala-full.png);
 }
 
 .info-proyecto-container {
@@ -587,34 +584,34 @@ body {
 
 /* POP UP SERVICIOS */
 .popup {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
 }
 
 .popup-content {
-    background: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    width: 60%;
-    max-width: 500px;
-    text-align: center;
-    position: relative;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  width: 60%;
+  max-width: 500px;
+  text-align: center;
+  position: relative;
 }
 
 .close-btn {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    font-size: 24px;
-    cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  cursor: pointer;
 }
 
 /* 4TA SECCION */
@@ -660,11 +657,11 @@ body {
   padding: 20px;
   overflow: hidden;
   max-height: 0;
-  transition: max-height 0.5s ease-in;
+  transition: max-height 0.5s linear;
 }
 
 .year-answer.show {
-  transition: max-height 0.5s ease-in;
+  transition: max-height 0.5s linear;
 }
 .trabajo-container {
   display: flex;
@@ -891,7 +888,12 @@ body {
 }
 
 /* SOBRE NOSOTROS - FORM */
-
+.contacto-form-2 {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
 .contacto-form {
   width: 70%;
   display: flex;

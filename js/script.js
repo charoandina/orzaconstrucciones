@@ -1,16 +1,18 @@
 /* HOME - INICIO */
 // FUNCION PRINCIPAL - CAMBIO SECCION NAVBAR PPAL
 function showSection(section) {
-  // Primero ocultar todas las secciones
+  // Ocultar todas las secciones con transición
   const sections = document.querySelectorAll('div[id$="-section"]');
-  sections.forEach(function (section) {
-    section.classList.add("hide");
+  sections.forEach(function (sec) {
+    sec.classList.remove("show");
+    sec.classList.add("hide");
   });
 
-  // Mostrar la sección correspondiente
+  // Mostrar la sección correspondiente con transición
   const sectionToShow = document.getElementById(section + "-section");
   if (sectionToShow) {
     sectionToShow.classList.remove("hide");
+    sectionToShow.classList.add("show");
   }
 
   // Eliminar la clase 'active' de todos los elementos li
@@ -65,10 +67,11 @@ function toggleMenu() {
   navList.classList.toggle('open');
 }*/
 
-
 /* CONSTRUCCIONES - FUNCION NAVBAR */
 // Obtener elementos de la lista de proyectos y contenedor padre
-const projectItems = document.querySelectorAll(".proyectos-lista .proyecto-nombre");
+const projectItems = document.querySelectorAll(
+  ".proyectos-lista .proyecto-nombre"
+);
 const projectContainer = document.querySelector(".proyectos-lista");
 const projectInfoSections = document.querySelectorAll(".proyectos-info > div");
 
@@ -78,7 +81,7 @@ const originalOrder = Array.from(projectItems);
 projectItems.forEach((item, index) => {
   item.addEventListener("click", () => {
     // Quitar clase 'proyecto-active' y ocultar imágenes en todos los elementos
-    projectItems.forEach(el => {
+    projectItems.forEach((el) => {
       el.classList.remove("proyecto-active");
       el.querySelector(".arrow-img").classList.add("hide");
     });
@@ -91,13 +94,13 @@ projectItems.forEach((item, index) => {
     if (arrowImage) arrowImage.classList.remove("hide");
 
     // Restaurar el orden de los elementos
-    originalOrder.forEach(project => projectContainer.appendChild(project));
+    originalOrder.forEach((project) => projectContainer.appendChild(project));
 
     // Mover el elemento seleccionado al inicio
     projectContainer.prepend(item);
 
     // Ocultar todas las secciones de información
-    projectInfoSections.forEach(section => section.classList.add("hide"));
+    projectInfoSections.forEach((section) => section.classList.add("hide"));
 
     // Mostrar la sección de información correspondiente
     const currentSection = projectInfoSections[index];
@@ -107,22 +110,22 @@ projectItems.forEach((item, index) => {
 
 /* SERVICIOS - FUNCION NAVBAR */
 // Selección de elementos
-const navItems = document.querySelectorAll('.servicios-navbar li');
-const infoSections = document.querySelectorAll('.servicios-info > div');
+const navItems = document.querySelectorAll(".servicios-navbar li");
+const infoSections = document.querySelectorAll(".servicios-info > div");
 
 // Mostrar la sección inicial
-document.getElementById('demoliciones-info').classList.remove('hide');
+document.getElementById("demoliciones-info").classList.remove("hide");
 
 // Agregar evento a cada elemento del menú
 navItems.forEach((item, index) => {
-  item.addEventListener('click', () => {
+  item.addEventListener("click", () => {
     // Limpiar la clase activa y ocultar todas las secciones
-    navItems.forEach(nav => nav.classList.remove('active'));
-    infoSections.forEach(section => section.classList.add('hide'));
+    navItems.forEach((nav) => nav.classList.remove("active"));
+    infoSections.forEach((section) => section.classList.add("hide"));
 
     // Activar el ítem seleccionado y mostrar la sección correspondiente
-    item.classList.add('active');
-    infoSections[index].classList.remove('hide');
+    item.classList.add("active");
+    infoSections[index].classList.remove("hide");
   });
 });
 
@@ -131,9 +134,15 @@ navItems.forEach((item, index) => {
 // Pop up Demoliciones
 // Seleccionar elementos demoliciones
 const popupDemoliciones = document.getElementById("demolicionesPopup");
-const closePopuppopupDemoliciones = document.getElementById("close-popup-demoliciones");
-const leftImgpopupDemoliciones = document.querySelector(".info-left-img-demoliciones");
-const rightImgpopupDemoliciones = document.querySelector(".info-right-img-demoliciones");
+const closePopuppopupDemoliciones = document.getElementById(
+  "close-popup-demoliciones"
+);
+const leftImgpopupDemoliciones = document.querySelector(
+  ".info-left-img-demoliciones"
+);
+const rightImgpopupDemoliciones = document.querySelector(
+  ".info-right-img-demoliciones"
+);
 
 // Función para mostrar el pop-up demoliciones
 function showPopupDemoliciones() {
@@ -162,9 +171,15 @@ popupDemoliciones.addEventListener("click", (e) => {
 // Pop up Movimientos
 // Seleccionar elementos
 const popupMovimientos = document.getElementById("moviemintoPopup");
-const closePopuppopupMovimientos = document.getElementById("close-popup-movimientos");
-const leftImgpopupMovimientos = document.querySelector(".info-left-img-movimientos");
-const rightImgpopupMovimientos = document.querySelector(".info-right-img-movimientos");
+const closePopuppopupMovimientos = document.getElementById(
+  "close-popup-movimientos"
+);
+const leftImgpopupMovimientos = document.querySelector(
+  ".info-left-img-movimientos"
+);
+const rightImgpopupMovimientos = document.querySelector(
+  ".info-right-img-movimientos"
+);
 
 // Función para mostrar el pop-up
 function showPopupMovimientos() {
@@ -189,7 +204,6 @@ popupMovimientos.addEventListener("click", (e) => {
     hidePopupMovimientos();
   }
 });
-
 
 /* TRABAJOS POR AÑO - OBJECT + ARRAY */
 const trabajosPorAnio = {
@@ -1145,7 +1159,6 @@ function handleScrollGeneric(selector) {
 window.addEventListener("scroll", () => {
   handleScrollGeneric(".contacto-form");
   handleScrollGeneric(".bg2-image");
-  handleScrollGeneric(".proyectos-container");
 });
 
 // Run once on load
@@ -1154,22 +1167,37 @@ document.addEventListener("DOMContentLoaded", () => {
   handleScrollGeneric(".bg2-image");
   handleScrollGeneric(".proyectos-container");
 });
-/*------COLLAPSED LIST AÑOS----------*/
 document.querySelectorAll(".year-container").forEach((container) => {
   container.addEventListener("click", function () {
     const answer = this.nextElementSibling;
     const isOpen = answer.classList.contains("show");
 
     if (!isOpen) {
+      // OPENING
       answer.classList.add("show");
+      answer.style.overflow = "hidden";
       answer.style.maxHeight = "0px";
+
       requestAnimationFrame(() => {
+        answer.style.transition = "max-height 0.3s ease-out";
         answer.style.maxHeight = answer.scrollHeight + "px";
       });
     } else {
-      /*------------VER ACA PORQUE NO FUNCIONA---------*/
-      answer.style.maxHeight = "0px";
-      answer.classList.remove("show");
+      // CLOSING
+      answer.style.maxHeight = answer.scrollHeight + "px";
+
+      requestAnimationFrame(() => {
+        answer.style.transition = "max-height 0.3s ease-in";
+        answer.style.maxHeight = "0px";
+      });
+
+      // reutilizar la animacion para abrir
+      setTimeout(() => {
+        answer.classList.remove("show");
+        answer.style.removeProperty("max-height");
+        answer.style.removeProperty("overflow");
+        answer.style.removeProperty("transition");
+      }, 300);
     }
   });
 });
