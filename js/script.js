@@ -26,6 +26,34 @@ function showSection(section) {
   if (activeItem) {
     activeItem.classList.add("active");
   }
+
+  // Elementos que deben aparecer con delay
+  const elementsToShow = [
+    "proyectosContainer",
+    "serviciosInfoContainer",
+    "collapsableList",
+    "trabajosSecondSection",
+    "nosotrosContainer",
+    "carousel",
+    "contactoForm",
+  ];
+
+  elementsToShow.forEach((id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.style.opacity = "0"; // Reset opacity
+    }
+  });
+
+  elementsToShow.forEach((id, index) => {
+    setTimeout(() => {
+      const element = document.getElementById(id);
+      if (element) {
+        element.style.opacity = "1";
+        element.style.transition = "opacity 1s ease-in-out";
+      }
+    });
+  });
 }
 
 // SCROLL CONTACTANOS
@@ -111,7 +139,9 @@ projectItems.forEach((item, index) => {
 /* SERVICIOS - FUNCION NAVBAR */
 // Selección de elementos
 const navItems = document.querySelectorAll(".servicios-navbar li");
-const infoSections = document.querySelectorAll(".servicios-info > div:not(.popup)");
+const infoSections = document.querySelectorAll(
+  ".servicios-info > div:not(.popup)"
+);
 
 // Mostrar la sección inicial
 document.getElementById("demoliciones-info").classList.remove("hide");
@@ -129,14 +159,15 @@ navItems.forEach((item, index) => {
   });
 });
 
-
 /* POP UP SERVICIOS */
 
 //Demoliciones
 const imgDemoliciones1 = document.getElementById("img-demoliciones-1");
 const imgDemoliciones2 = document.getElementById("img-demoliciones-2");
 const DemolicionesPopup = document.getElementById("demolicionesPopup");
-const closePopupBtnDemoliciones = document.getElementById("close-popup-demoliciones");
+const closePopupBtnDemoliciones = document.getElementById(
+  "close-popup-demoliciones"
+);
 
 // Función para mostrar el pop-up
 function mostrarPopupDemoliciones() {
@@ -155,7 +186,6 @@ imgDemoliciones2.addEventListener("click", mostrarPopupDemoliciones);
 // Evento para cerrar el pop-up
 closePopupBtnDemoliciones.addEventListener("click", cerrarPopupDemoliciones);
 
-
 // Movimientos de suelo
 // Selección de elementos
 const imgMovimiento1 = document.getElementById("img-movimientos-1");
@@ -165,12 +195,12 @@ const closePopupBtn = document.getElementById("close-popup-movimientos");
 
 // Función para mostrar el pop-up
 function mostrarPopup() {
-    movimientoPopup.classList.remove("hide");
+  movimientoPopup.classList.remove("hide");
 }
 
 // Función para cerrar el pop-up
 function cerrarPopup() {
-    movimientoPopup.classList.add("hide");
+  movimientoPopup.classList.add("hide");
 }
 
 // Eventos para abrir el pop-up
@@ -180,12 +210,7 @@ imgMovimiento2.addEventListener("click", mostrarPopup);
 // Evento para cerrar el pop-up
 closePopupBtn.addEventListener("click", cerrarPopup);
 
-
-
 //Excavaciones
-
-
-
 
 /* TRABAJOS POR AÑO - OBJECT + ARRAY */
 const trabajosPorAnio = {
