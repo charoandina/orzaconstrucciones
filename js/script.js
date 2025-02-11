@@ -111,7 +111,7 @@ projectItems.forEach((item, index) => {
 /* SERVICIOS - FUNCION NAVBAR */
 // Selección de elementos
 const navItems = document.querySelectorAll(".servicios-navbar li");
-const infoSections = document.querySelectorAll(".servicios-info > div");
+const infoSections = document.querySelectorAll(".servicios-info > div:not(.popup)");
 
 // Mostrar la sección inicial
 document.getElementById("demoliciones-info").classList.remove("hide");
@@ -129,81 +129,63 @@ navItems.forEach((item, index) => {
   });
 });
 
+
 /* POP UP SERVICIOS */
 
-// Pop up Demoliciones
-// Seleccionar elementos demoliciones
-const popupDemoliciones = document.getElementById("demolicionesPopup");
-const closePopuppopupDemoliciones = document.getElementById(
-  "close-popup-demoliciones"
-);
-const leftImgpopupDemoliciones = document.querySelector(
-  ".info-left-img-demoliciones"
-);
-const rightImgpopupDemoliciones = document.querySelector(
-  ".info-right-img-demoliciones"
-);
-
-// Función para mostrar el pop-up demoliciones
-function showPopupDemoliciones() {
-  popupDemoliciones.classList.remove("hide");
-}
-
-// Función para ocultar el pop-up demoliciones
-function hidePopupDemoliciones() {
-  popupDemoliciones.classList.add("hide");
-}
-
-// Mostrar el pop-up al hacer clic en las imágenes demoliciones
-leftImgpopupDemoliciones.addEventListener("click", showPopupDemoliciones);
-rightImgpopupDemoliciones.addEventListener("click", showPopupDemoliciones);
-
-// Cerrar el pop-up al hacer clic en el botón de cierre demoliciones
-closePopuppopupDemoliciones.addEventListener("click", hidePopupDemoliciones);
-
-// Cerrar el pop-up al hacer clic fuera del contenido demoliciones
-popupDemoliciones.addEventListener("click", (e) => {
-  if (e.target === popupDemoliciones) {
-    hidePopupDemoliciones();
-  }
-});
-
-// Pop up Movimientos
-// Seleccionar elementos
-const popupMovimientos = document.getElementById("moviemintoPopup");
-const closePopuppopupMovimientos = document.getElementById(
-  "close-popup-movimientos"
-);
-const leftImgpopupMovimientos = document.querySelector(
-  ".info-left-img-movimientos"
-);
-const rightImgpopupMovimientos = document.querySelector(
-  ".info-right-img-movimientos"
-);
+//Demoliciones
+const imgDemoliciones1 = document.getElementById("img-demoliciones-1");
+const imgDemoliciones2 = document.getElementById("img-demoliciones-2");
+const DemolicionesPopup = document.getElementById("demolicionesPopup");
+const closePopupBtnDemoliciones = document.getElementById("close-popup-demoliciones");
 
 // Función para mostrar el pop-up
-function showPopupMovimientos() {
-  popupMovimientos.classList.remove("hide");
+function mostrarPopupDemoliciones() {
+  DemolicionesPopup.classList.remove("hide");
 }
 
-// Función para ocultar el pop-up
-function hidePopupMovimientos() {
-  popupMovimientos.classList.add("hide");
+// Función para cerrar el pop-up
+function cerrarPopupDemoliciones() {
+  DemolicionesPopup.classList.add("hide");
 }
 
-// Mostrar el pop-up al hacer clic en las imágenes
-leftImgpopupMovimientos.addEventListener("click", showPopupMovimientos);
-rightImgpopupMovimientos.addEventListener("click", showPopupMovimientos);
+// Eventos para abrir el pop-up
+imgDemoliciones1.addEventListener("click", mostrarPopupDemoliciones);
+imgDemoliciones2.addEventListener("click", mostrarPopupDemoliciones);
 
-// Cerrar el pop-up al hacer clic en el botón de cierre
-closePopuppopupMovimientos.addEventListener("click", hidePopupMovimientos);
+// Evento para cerrar el pop-up
+closePopupBtnDemoliciones.addEventListener("click", cerrarPopupDemoliciones);
 
-// Cerrar el pop-up al hacer clic fuera del contenido
-popupMovimientos.addEventListener("click", (e) => {
-  if (e.target === popupMovimientos) {
-    hidePopupMovimientos();
-  }
-});
+
+// Movimientos de suelo
+// Selección de elementos
+const imgMovimiento1 = document.getElementById("img-movimientos-1");
+const imgMovimiento2 = document.getElementById("img-movimientos-2");
+const movimientoPopup = document.getElementById("movimientoPopup");
+const closePopupBtn = document.getElementById("close-popup-movimientos");
+
+// Función para mostrar el pop-up
+function mostrarPopup() {
+    movimientoPopup.classList.remove("hide");
+}
+
+// Función para cerrar el pop-up
+function cerrarPopup() {
+    movimientoPopup.classList.add("hide");
+}
+
+// Eventos para abrir el pop-up
+imgMovimiento1.addEventListener("click", mostrarPopup);
+imgMovimiento2.addEventListener("click", mostrarPopup);
+
+// Evento para cerrar el pop-up
+closePopupBtn.addEventListener("click", cerrarPopup);
+
+
+
+//Excavaciones
+
+
+
 
 /* TRABAJOS POR AÑO - OBJECT + ARRAY */
 const trabajosPorAnio = {
