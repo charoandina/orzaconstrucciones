@@ -165,9 +165,7 @@ navItems.forEach((item, index) => {
 const imgDemoliciones1 = document.getElementById("img-demoliciones-1");
 const imgDemoliciones2 = document.getElementById("img-demoliciones-2");
 const DemolicionesPopup = document.getElementById("demolicionesPopup");
-const closePopupBtnDemoliciones = document.getElementById(
-  "close-popup-demoliciones"
-);
+const closePopupBtnDemoliciones = document.getElementById("close-popup-demoliciones");
 
 // Función para mostrar el pop-up
 function mostrarPopupDemoliciones() {
@@ -186,6 +184,8 @@ imgDemoliciones2.addEventListener("click", mostrarPopupDemoliciones);
 // Evento para cerrar el pop-up
 closePopupBtnDemoliciones.addEventListener("click", cerrarPopupDemoliciones);
 
+
+
 // Movimientos de suelo
 // Selección de elementos
 const imgMovimiento1 = document.getElementById("img-movimientos-1");
@@ -194,23 +194,45 @@ const movimientoPopup = document.getElementById("movimientoPopup");
 const closePopupBtn = document.getElementById("close-popup-movimientos");
 
 // Función para mostrar el pop-up
-function mostrarPopup() {
+function mostrarPopupExcavaciones() {
   movimientoPopup.classList.remove("hide");
 }
 
 // Función para cerrar el pop-up
-function cerrarPopup() {
+function cerrarPopupExcavaciones() {
   movimientoPopup.classList.add("hide");
 }
 
 // Eventos para abrir el pop-up
-imgMovimiento1.addEventListener("click", mostrarPopup);
-imgMovimiento2.addEventListener("click", mostrarPopup);
+imgMovimiento1.addEventListener("click", mostrarPopupExcavaciones);
+imgMovimiento2.addEventListener("click", mostrarPopupExcavaciones);
 
 // Evento para cerrar el pop-up
-closePopupBtn.addEventListener("click", cerrarPopup);
+closePopupBtn.addEventListener("click", cerrarPopupExcavaciones);
 
 //Excavaciones
+// Selección de elementos
+const imgExcavaciones1 = document.getElementById("img-excavaciones-1");
+const imgExcavaciones2 = document.getElementById("img-excavaciones-2");
+const excavacionesPopup = document.getElementById("excavacionesPopup");
+const closePopupBtnExcavaciones = document.getElementById("close-popup-excavaciones");
+
+// Función para mostrar el pop-up
+function mostrarPopupExcavaciones() {
+  excavacionesPopup.classList.remove("hide");
+}
+
+// Función para cerrar el pop-up
+function cerrarPopupExcavaciones() {
+  excavacionesPopup.classList.add("hide");
+}
+
+// Eventos para abrir el pop-up
+imgExcavaciones1.addEventListener("click", mostrarPopupExcavaciones);
+imgExcavaciones2.addEventListener("click", mostrarPopupExcavaciones);
+
+// Evento para cerrar el pop-up
+closePopupBtnExcavaciones.addEventListener("click", cerrarPopupExcavaciones);
 
 /* TRABAJOS POR AÑO - OBJECT + ARRAY */
 const trabajosPorAnio = {
@@ -1044,10 +1066,12 @@ const trabajosPorAnio = {
   ],
 };
 
-// Función para cargar los trabajos en el HTML
+// Función para cargar los trabajos en el HTML solo cuando el usuario hace clic
 function cargarTrabajos(anio) {
   const trabajos = trabajosPorAnio[anio];
   const container = document.getElementById(`year-${anio}`);
+
+  if (!container || container.dataset.loaded === "true") return; // Evita cargar duplicados
 
   if (trabajos) {
     trabajos.forEach((trabajo) => {
@@ -1064,33 +1088,26 @@ function cargarTrabajos(anio) {
 
       container.appendChild(trabajoElement);
     });
+
+    container.dataset.loaded = "true"; // Marca como cargado para evitar duplicaciones
   }
 }
-
-// Cargar los trabajos de los años 2024 y 2023
-cargarTrabajos(2024);
-cargarTrabajos(2023);
-cargarTrabajos(2022);
-cargarTrabajos(2021);
-cargarTrabajos(2020);
-cargarTrabajos(2019);
-cargarTrabajos(2018);
-cargarTrabajos(2017);
-cargarTrabajos(2016);
 
 // Selecciona todos los contenedores de años
 const yearContainers = document.querySelectorAll(".year-container");
 
 yearContainers.forEach((container) => {
   container.addEventListener("click", () => {
-    // Encuentra el div "year-answer" relacionado
     const yearAnswer = container.nextElementSibling;
+    const anio = container.dataset.year; // Obtener el año del atributo data-year
 
     if (yearAnswer) {
-      // Alterna la clase "hide"
-      yearAnswer.classList.toggle("hide");
-      // Alterna la clase "active" en el contenedor
+      yearAnswer.classList.toggle("hide"); // Muestra/oculta trabajos
       container.classList.toggle("active");
+
+      if (!yearAnswer.classList.contains("hide")) {
+        cargarTrabajos(anio); // Solo carga los trabajos si la sección se expande
+      }
     }
   });
 });

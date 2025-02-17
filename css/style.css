@@ -6,6 +6,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .container {
   width: 100%;
   max-width: 1000px;
@@ -172,7 +176,7 @@ body {
 
 .bg-image {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url(../img/bg-hero.png);
+    url(../img/bg-hero.webp);
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -224,7 +228,7 @@ body {
 }
 
 .bg2-image {
-  background-image: url(../img/bg-2nd.png);
+  background-image: url(../img/bg-2nd.webp);
   background-repeat: no-repeat;
   background-size: cover;
   border-bottom: 1px solid var(--strokes-texto);
@@ -336,12 +340,11 @@ body {
 
 .proyectos-container {
   display: flex;
-  width: 70%;
-  height: 700px;
+  max-width: 1200px;
+  max-height: 700px;
   margin: auto;
   margin-bottom: 60px;
   border: 1px solid var(--strokes-texto);
-  transform: translateY(40px);
   opacity: 0;
   transition: opacity 0.5s ease, transform 0.5s ease;
 }
@@ -399,19 +402,19 @@ body {
 }
 
 .proyecto-burela {
-  background-image: url(../img/burela-full.png);
+  background-image: url(../img/burela-full.webp);
 }
 
 .proyecto-virreyloreto {
-  background-image: url(../img/virreyloreto-full.png);
+  background-image: url(../img/virreyloreto-full.webp);
 }
 
 .proyecto-aviles {
-  background-image: url(../img/aviles-full.png);
+  background-image: url(../img/aviles-full.webp);
 }
 
 .proyecto-zabala {
-  background-image: url(../img/zabala-full.png);
+  background-image: url(../img/zabala-full.webp);
 }
 
 .info-proyecto-container {
@@ -503,7 +506,7 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-image: url(../img/demoliciones1.png);
+  background-image: url(../img/demoliciones1.webp);
   position: relative;
 }
 
@@ -515,7 +518,7 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-image: url(../img/demoliciones2.png);
+  background-image: url(../img/demoliciones2.webp);
   position: relative;
 }
 
@@ -527,7 +530,7 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-image: url(../img/movimientos1.png);
+  background-image: url(../img/movimientos1.webp);
   border: 1px solid var(--strokes-texto);
 }
 
@@ -539,7 +542,7 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-image: url(../img/movimientos2.png);
+  background-image: url(../img/movimientos2.webp);
   border: 1px solid var(--strokes-texto);
 }
 
@@ -551,7 +554,7 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-image: url(../img/excavaciones1.png);
+  background-image: url(../img/excavaciones1.webp);
   border: 1px solid var(--strokes-texto);
 }
 
@@ -563,7 +566,7 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-image: url(../img/excavaciones2.jpg);
+  background-image: url(../img/excavaciones2.webp);
   border: 1px solid var(--strokes-texto);
 }
 
@@ -653,7 +656,7 @@ body {
 }
 
 .year-answer {
-  background-image: url(../img/bg-hero-2.png);
+  background-image: url(../img/bg-hero-2.webp);
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
@@ -726,27 +729,27 @@ body {
 }
 
 .construccion-burela {
-  background-image: url(../img/burela-trabajos.png);
+  background-image: url(../img/burela-trabajos.webp);
 }
 
 .demolicion-elcano {
-  background-image: url(../img/elcano-trabajos.png);
+  background-image: url(../img/elcano-trabajos.webp);
 }
 
 .construccion-aviles {
-  background-image: url(../img/aviles-trabajos.png);
+  background-image: url(../img/aviles-trabajos.webp);
 }
 
 .excavacion-construye {
-  background-image: url(../img/construye-trabajos.png);
+  background-image: url(../img/construye-trabajos.webp);
 }
 
 .construccion-loreto {
-  background-image: url(../img/loreto-trabajos.png);
+  background-image: url(../img/loreto-trabajos.webp);
 }
 
 .demolicion-realtor {
-  background-image: url(../img/realtor-trabajos.png);
+  background-image: url(../img/realtor-trabajos.webp);
 }
 
 /* 5TA SECCION */
@@ -783,7 +786,7 @@ body {
 }
 
 .nosotros-left-img {
-  background-image: url(../img/nosotros1.png);
+  background-image: url(../img/nosotros1.webp);
   width: 298px;
   height: 355px;
   background-size: cover;
@@ -801,23 +804,25 @@ body {
   display: flex;
   width: 100%;
   justify-content: space-between;
+  gap: 5px;
 }
 
 .nosotros-right-img1,
 .nosotros-right-img2 {
-  width: 366px;
+  width: 100%;
   height: 163px;
   background-size: cover;
   background-position: center;
+  max-width: 366px;
 }
 
 .nosotros-right-img1 {
-  background-image: url(../img/nosotros2.png);
+  background-image: url(../img/nosotros2.webp);
   border: 1px solid var(--strokes-texto);
 }
 
 .nosotros-right-img2 {
-  background-image: url(../img/nosotros3.png);
+  background-image: url(../img/nosotros3.webp);
   border: 1px solid var(--strokes-texto);
 }
 
