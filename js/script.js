@@ -1225,3 +1225,38 @@ document.querySelectorAll(".year-container").forEach((container) => {
     }
   });
 });
+
+
+/* FORMULARIO DE CONTACTO  */
+document.getElementById("contact-form").addEventListener("submit", function(event) {
+  event.preventDefault(); // Evita que la página se recargue
+
+  let formData = new FormData();
+  formData.append("name", document.getElementById("name").value);
+  formData.append("email", document.getElementById("email").value);
+  formData.append("phone", document.getElementById("phone").value);
+  formData.append("message", document.getElementById("message").value);
+
+  fetch("procesar_formulario.php", {
+      method: "POST",
+      body: formData
+  })
+  .then(response => response.text())
+  .then(data => {
+      Swal.fire({
+          title: "¡Éxito!",
+          text: data,
+          icon: "success",
+          confirmButtonText: "Aceptar"
+      });
+      document.getElementById("contact-form").reset(); // Limpiar el formulario tras enviar
+  })
+  .catch(error => {
+      Swal.fire({
+          title: "Error",
+          text: "Hubo un problema al enviar el formulario.",
+          icon: "error",
+          confirmButtonText: "Cerrar"
+      });
+  });
+});

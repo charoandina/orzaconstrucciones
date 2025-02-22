@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $to = "noobstudioagency@gmail.com";  // Reemplázalo con tu correo
     $subject = "Nuevo mensaje de contacto de $name";
     $body = "Nombre: $name\nEmail: $email\nTeléfono: $phone\nMensaje:\n$message";
-    $headers = "From: noreply@tuweb.com\n";
+    $headers = "From: orza@orzaconstrucciones.com\n";
     $headers .= "Reply-To: $email\n";
     $headers .= "Content-Type: text/plain; charset=UTF-8\n";
 

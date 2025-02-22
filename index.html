@@ -69,13 +69,13 @@
         <h2 class="industry-bold title">CONTACTANOS</h2>
         <div class="contacto-form-container" id="contactoForm">
             <div class="form-container">
-                <form action="procesar_formulario.php" method="POST">
-                    <input type="text" name="name" placeholder="Nombre*" class="montserrat-regular" required>
-                    <input type="email" name="email" placeholder="Email*" class="montserrat-regular" required>
-                    <input type="text" name="phone" placeholder="Teléfono*" class="montserrat-regular" required>
-                    <textarea name="message" placeholder="Mensaje*" class="montserrat-regular" required></textarea>
-                    <button type="submit" class="form-button industry-medium">Enviar</button>
-                </form>
+                <form id="contact-form">
+                    <input type="text" id="name" placeholder="Nombre*" class="montserrat-regular">
+                    <input type="text" id="email" placeholder="Email*" class="montserrat-regular">
+                    <input type="text" id="phone" placeholder="Teléfono*" class="montserrat-regular">
+                    <textarea id="message" placeholder="Mensaje*" class="montserrat-regular"></textarea>
+                    <button type="submit">Enviar</button>
+                </form>                
             </div>
             <div class="orza-info-contacto">
                 <div>
@@ -518,5 +518,6 @@
 </footer>
 
 <script src="js/script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 </html>
