@@ -69,11 +69,12 @@
         <h2 class="industry-bold title">CONTACTANOS</h2>
         <div class="contacto-form-container" id="contactoForm">
             <div class="form-container">
-                <form action="">
-                    <input type="text" placeholder="Nombre*" class="montserrat-regular">
-                    <input type="text" placeholder="Email*" class="montserrat-regular">
-                    <input type="text" placeholder="Teléfono*" class="montserrat-regular">
-                    <textarea name="" id="" placeholder="Mensaje*" class="montserrat-regular"></textarea>
+                <form action="procesar_formulario.php" method="POST">
+                    <input type="text" name="name" placeholder="Nombre*" class="montserrat-regular" required>
+                    <input type="email" name="email" placeholder="Email*" class="montserrat-regular" required>
+                    <input type="text" name="phone" placeholder="Teléfono*" class="montserrat-regular" required>
+                    <textarea name="message" placeholder="Mensaje*" class="montserrat-regular" required></textarea>
+                    <button type="submit">Enviar</button>
                 </form>
             </div>
             <div class="orza-info-contacto">
