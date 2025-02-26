@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/font.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,11 +24,11 @@
         </div>
         <div class="nav-list">
             <ul class="industry-regular">
-                <li id="inicio" class="active" onclick="showSection('hero')">INICIO</li>
+                <li id="inicio" class="active" onclick="showSection('hero','contacto-form')">INICIO</li>
                 <li id="construcciones" onclick="showSection('construcciones')">CONSTRUCCIONES</li>
                 <li id="servicios" onclick="showSection('servicios')">SERVICIOS</li>
                 <li id="trabajos" onclick="showSection('trabajos')">TRABAJOS</li>
-                <li id="nosotros" onclick="showSection('nosotros')">NOSOTROS</li>
+                <li id="nosotros" onclick="showSection('nosotros', 'contact-form')">NOSOTROS</li>
             </ul>
         </div>
     </div>
@@ -63,43 +64,8 @@
             </div>
         </div>
     </div>
-
-    <!--CONTACTANOS-->
-    <div class="contacto-form" id="contacto-hero">
-        <h2 class="industry-bold title">CONTACTANOS</h2>
-        <div class="contacto-form-container" id="contactoForm">
-            <div class="form-container">
-                <form id="contact-form">
-                    <input type="text" id="name" placeholder="Nombre*" class="montserrat-regular">
-                    <input type="text" id="email" placeholder="Email*" class="montserrat-regular">
-                    <input type="text" id="phone" placeholder="Teléfono*" class="montserrat-regular">
-                    <textarea id="message" placeholder="Mensaje*" class="montserrat-regular"></textarea>
-                    <button type="submit">Enviar</button>
-                </form>                
-            </div>
-            <div class="orza-info-contacto">
-                <div>
-                    <img src="img/mail.webp" alt="">
-                    <p class="industry-regular">orzaconstruccionessa@gmail.com</p>
-                    <p class="industry-regular">orza@hotmail.com</p>
-                </div>
-                <div>
-                    <img src="img/call.webp" alt="">
-                    <p class="industry-regular">(011) 4770-1079</p>
-                </div>
-                <div>
-                    <img src="img/location_on.webp" alt="">
-                    <p class="industry-regular">Burela 3055- Piso 6º - C.A.B.A. (C1431EHM)</p>
-                </div>
-                <div>
-                    <img src="img/ad_units.webp" alt="">
-                    <p class="industry-regular">(+54911) 3386-3757</p>
-                </div>
-            </div>
-        </div>
-
-    </div>
 </div>
+
 
 <!--CONSTRUCCIONES-->
 <div id="construcciones-section" class="hide">
@@ -450,42 +416,46 @@
     </div>
 
 
-    <!--CONTACTANOS-->
-    <div class="contacto-form-2">
-        <h2 class="industry-bold title">CONTACTANOS</h2>
-        <div class="contacto-form-container" >
-            <div class="form-container">
-                <form action="">
-                    <input type="text" placeholder="Nombre*" class="montserrat-regular">
-                    <input type="text" placeholder="Email*" class="montserrat-regular">
-                    <input type="text" placeholder="Teléfono*" class="montserrat-regular">
-                    <textarea name="" id="" placeholder="Mensaje*" class="montserrat-regular"></textarea>
-                </form>
+</div>
+
+
+<!--CONTACTANOS-->
+<div class="contacto-form" id="contacto-hero">
+    <h2 class="industry-bold title">CONTACTANOS</h2>
+    <div class="contacto-form-container" id="contactoForm">
+        <div class="form-container">
+            <form id="contact-form">
+                <input type="text" name="name" placeholder="Nombre*" class="montserrat-regular" required>
+                <input type="email" name="email" placeholder="Email*" class="montserrat-regular" required>
+                <input type="text" name="phone" placeholder="Teléfono*" class="montserrat-regular" required>
+                <textarea name="message" placeholder="Mensaje*" class="montserrat-regular" required></textarea>
+                <button type="submit" class="form-button industry-medium">Enviar</button>
+            </form>
+            <div id="form-response"></div>
+            
+        </div>
+        <div class="orza-info-contacto">
+            <div>
+                <img src="img/mail.webp" alt="">
+                <p class="industry-regular">orzaconstruccionessa@gmail.com</p>
+                <p class="industry-regular">orza@hotmail.com</p>
             </div>
-            <div class="orza-info-contacto">
-                <div>
-                    <img src="img/mail.webp" alt="">
-                    <p class="industry-regular">orzaconstruccionessa@gmail.com</p>
-                    <p class="industry-regular">orza@hotmail.com</p>
-                </div>
-                <div>
-                    <img src="img/call.webp" alt="">
-                    <p class="industry-regular">(011) 4770-1079</p>
-                </div>
-                <div>
-                    <img src="img/location_on.webp" alt="">
-                    <p class="industry-regular">Burela 3055- Piso 6º - C.A.B.A. (C1431EHM)</p>
-                </div>
-                <div>
-                    <img src="img/ad_units.webp" alt="">
-                    <p class="industry-regular">(+54911) 3386-3757</p>
-                </div>
+            <div>
+                <img src="img/call.webp" alt="">
+                <p class="industry-regular">(011) 4770-1079</p>
+            </div>
+            <div>
+                <img src="img/location_on.webp" alt="">
+                <p class="industry-regular">Burela 3055- Piso 6º - C.A.B.A. (C1431EHM)</p>
+            </div>
+            <div>
+                <img src="img/ad_units.webp" alt="">
+                <p class="industry-regular">(+54911) 3386-3757</p>
             </div>
         </div>
-        <button type="" class="form-button industry-medium">Enviar</button>
     </div>
-
 </div>
+
 
 <!--FOOTER-->
 <footer class="industry-medium">

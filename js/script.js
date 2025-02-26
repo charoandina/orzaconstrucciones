@@ -165,7 +165,9 @@ navItems.forEach((item, index) => {
 const imgDemoliciones1 = document.getElementById("img-demoliciones-1");
 const imgDemoliciones2 = document.getElementById("img-demoliciones-2");
 const DemolicionesPopup = document.getElementById("demolicionesPopup");
-const closePopupBtnDemoliciones = document.getElementById("close-popup-demoliciones");
+const closePopupBtnDemoliciones = document.getElementById(
+  "close-popup-demoliciones"
+);
 
 // Función para mostrar el pop-up
 function mostrarPopupDemoliciones() {
@@ -183,8 +185,6 @@ imgDemoliciones2.addEventListener("click", mostrarPopupDemoliciones);
 
 // Evento para cerrar el pop-up
 closePopupBtnDemoliciones.addEventListener("click", cerrarPopupDemoliciones);
-
-
 
 // Movimientos de suelo
 // Selección de elementos
@@ -215,7 +215,9 @@ closePopupBtn.addEventListener("click", cerrarPopupExcavaciones);
 const imgExcavaciones1 = document.getElementById("img-excavaciones-1");
 const imgExcavaciones2 = document.getElementById("img-excavaciones-2");
 const excavacionesPopup = document.getElementById("excavacionesPopup");
-const closePopupBtnExcavaciones = document.getElementById("close-popup-excavaciones");
+const closePopupBtnExcavaciones = document.getElementById(
+  "close-popup-excavaciones"
+);
 
 // Función para mostrar el pop-up
 function mostrarPopupExcavaciones() {
@@ -1226,37 +1228,32 @@ document.querySelectorAll(".year-container").forEach((container) => {
   });
 });
 
+/* FORM */
 
-/* FORMULARIO DE CONTACTO  */
-document.getElementById("contact-form").addEventListener("submit", function(event) {
-  event.preventDefault(); // Evita que la página se recargue
+$(document).ready(function () {
+  var form = $("#contact-form");
+  if (form.length === 0) {
+    console.error("El formulario no se encontró en el DOM.");
+    return;
+  }
 
-  let formData = new FormData();
-  formData.append("name", document.getElementById("name").value);
-  formData.append("email", document.getElementById("email").value);
-  formData.append("phone", document.getElementById("phone").value);
-  formData.append("message", document.getElementById("message").value);
+  form.on("submit", function (event) {
+    event.preventDefault();
 
-  fetch("procesar_formulario.php", {
-      method: "POST",
-      body: formData
-  })
-  .then(response => response.text())
-  .then(data => {
-      Swal.fire({
-          title: "¡Éxito!",
-          text: data,
-          icon: "success",
-          confirmButtonText: "Aceptar"
-      });
-      document.getElementById("contact-form").reset(); // Limpiar el formulario tras enviar
-  })
-  .catch(error => {
-      Swal.fire({
-          title: "Error",
-          text: "Hubo un problema al enviar el formulario.",
-          icon: "error",
-          confirmButtonText: "Cerrar"
-      });
+    var formData = form.serialize();
+
+    $.ajax({
+      url: "procesar_formulario.php",
+      type: "POST",
+      data: formData,
+      success: function (response) {
+        $("#form-response").html(response);
+      },
+      error: function () {
+        $("#form-response").html(
+          "Hubo un error al enviar el mensaje. Por favor, intenta nuevamente."
+        );
+      },
+    });
   });
 });
