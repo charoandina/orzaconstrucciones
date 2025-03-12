@@ -1257,3 +1257,44 @@ $(document).ready(function () {
     });
   });
 });
+document.addEventListener("DOMContentLoaded", function () {
+  // Listener para el evento de scroll
+  window.addEventListener("scroll", function () {
+    handleScrollGeneric("#year-2016"); // Este es el "trigger" que hace que se animen las tarjetas
+  });
+  // Función para verificar si un elemento está en la vista del usuario
+  function isElementInViewport(element) {
+    const rect = element.getBoundingClientRect();
+    return (
+      rect.top >= 0 &&
+      rect.left >= 0 &&
+      rect.bottom <=
+        (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+  }
+
+  // Función que se activa al hacer scroll, se ejecuta con el selector del trigger
+  function handleScrollGeneric(selector) {
+    const element = document.querySelector(selector);
+    if (!element) {
+      return;
+    }
+
+    // Si el elemento está en la vista, agregamos la clase 'visible' a las tarjetas
+    if (isElementInViewport(element)) {
+      // Seleccionamos las tarjetas y animamos una a una
+      const containers = document.querySelectorAll(
+        ".trabajos-second-container"
+      );
+      containers.forEach((container, index) => {
+        if (index < 6) {
+          // Solo animamos hasta el sexto elemento
+          setTimeout(() => {
+            container.classList.add("visible");
+          }, index * 300); // Retraso de 300ms entre cada contenedor
+        }
+      });
+    }
+  }
+});
