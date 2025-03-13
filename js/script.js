@@ -1181,10 +1181,20 @@ function handleScrollGeneric(selector) {
     element.classList.add("visible");
   }
 }
-
+/*---------IMG DE BG2 DELAY-------*/
 window.addEventListener("scroll", () => {
   handleScrollGeneric(".contacto-form");
   handleScrollGeneric(".bg2-image");
+
+  // Espera 1 segundo después de handleScrollGeneric(".bg2-image")
+  setTimeout(() => {
+    document.querySelector(".section-2-img-1").classList.add("animate-in");
+
+    // Agrega la animación a la segunda imagen con 50ms de retraso
+    setTimeout(() => {
+      document.querySelector(".section-2-img-2").classList.add("animate-in");
+    }, 100);
+  }, 500);
 });
 
 // Run once on load
@@ -1283,7 +1293,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Si el elemento está en la vista, agregamos la clase 'visible' a las tarjetas
     if (isElementInViewport(element)) {
-      // Seleccionamos las tarjetas y animamos una a una
       const containers = document.querySelectorAll(
         ".trabajos-second-container"
       );
@@ -1292,7 +1301,7 @@ document.addEventListener("DOMContentLoaded", function () {
           // Solo animamos hasta el sexto elemento
           setTimeout(() => {
             container.classList.add("visible");
-          }, index * 300); // Retraso de 300ms entre cada contenedor
+          }, index * 300);
         }
       });
     }
