@@ -732,7 +732,7 @@ body {
 }
 .trabajos-second-container {
   opacity: 0;
-  transform: translateY(-50px); /* Inicia fuera de la vista */
+  transform: translateY(-50px);
   animation: slideIn 1s forwards;
 }
 
@@ -802,6 +802,28 @@ body {
 
 .demolicion-realtor {
   background-image: url(../img/realtor-trabajos.webp);
+}
+.construccion-burela,
+.demolicion-elcano,
+.construccion-aviles,
+.excavacion-construye,
+.construccion-loreto,
+.demolicion-realtor {
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: background-size 1s ease-in;
+  background-position: center;
+}
+
+/* Efecto hover */
+.construccion-burela:hover,
+.demolicion-elcano:hover,
+.construccion-aviles:hover,
+.excavacion-construye:hover,
+.construccion-loreto:hover,
+.demolicion-realtor:hover {
+  background-size: 110%;
 }
 
 /* 5TA SECCION */
