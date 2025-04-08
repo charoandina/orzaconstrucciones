@@ -89,12 +89,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-/* BURGER NAVBAR
-function toggleMenu() {
-  const navList = document.querySelector('.nav-list');
-  navList.classList.toggle('open');
-}*/
-
 /* CONSTRUCCIONES - FUNCION NAVBAR */
 // Obtener elementos de la lista de proyectos y contenedor padre
 const projectItems = document.querySelectorAll(
@@ -161,13 +155,11 @@ navItems.forEach((item, index) => {
 
 /* POP UP SERVICIOS */
 
-//Demoliciones
+//DEMOLICIONES
 const imgDemoliciones1 = document.getElementById("img-demoliciones-1");
 const imgDemoliciones2 = document.getElementById("img-demoliciones-2");
 const DemolicionesPopup = document.getElementById("demolicionesPopup");
-const closePopupBtnDemoliciones = document.getElementById(
-  "close-popup-demoliciones"
-);
+const closePopupBtnDemoliciones = document.getElementById("close-popup-demoliciones");
 
 // Función para mostrar el pop-up
 function mostrarPopupDemoliciones() {
@@ -186,7 +178,8 @@ imgDemoliciones2.addEventListener("click", mostrarPopupDemoliciones);
 // Evento para cerrar el pop-up
 closePopupBtnDemoliciones.addEventListener("click", cerrarPopupDemoliciones);
 
-// Movimientos de suelo
+
+// MOVIMIENTOS DE SUELO
 // Selección de elementos
 const imgMovimiento1 = document.getElementById("img-movimientos-1");
 const imgMovimiento2 = document.getElementById("img-movimientos-2");
@@ -194,21 +187,21 @@ const movimientoPopup = document.getElementById("movimientoPopup");
 const closePopupBtn = document.getElementById("close-popup-movimientos");
 
 // Función para mostrar el pop-up
-function mostrarPopupExcavaciones() {
+function mostrarPopupMovimientos() {
   movimientoPopup.classList.remove("hide");
 }
 
 // Función para cerrar el pop-up
-function cerrarPopupExcavaciones() {
+function cerrarPopupMovimientos() {
   movimientoPopup.classList.add("hide");
 }
 
 // Eventos para abrir el pop-up
-imgMovimiento1.addEventListener("click", mostrarPopupExcavaciones);
-imgMovimiento2.addEventListener("click", mostrarPopupExcavaciones);
+imgMovimiento1.addEventListener("click", mostrarPopupMovimientos);
+imgMovimiento2.addEventListener("click", mostrarPopupMovimientos);
 
 // Evento para cerrar el pop-up
-closePopupBtn.addEventListener("click", cerrarPopupExcavaciones);
+closePopupBtn.addEventListener("click", cerrarPopupMovimientos);
 
 //Excavaciones
 // Selección de elementos
