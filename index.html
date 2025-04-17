@@ -10,6 +10,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
     <!------GASP------>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
@@ -23,7 +25,7 @@
 <div class="navbar-container montserrat-regular">
     <div class="navbar">
         <div class="logo-container"><a href="index.html"><img src="img/logo-orza.webp" alt=""></a></div>
-        <div class="hamburger-menu" onclick="toggleMenu()">
+        <div class="hamburger-menu" >
             &#9776;
         </div>
         <div class="nav-list">
@@ -45,7 +47,7 @@
             <h1 class="industry-bold">ORZA</h1>
             <h2 class="industry-bold">CONSTRUCCIONES</h2>
             
-            <p class="typewriter montserrat-thin">“Proyectos diseñados para durar, construidos con precisión y atención al detalle.”</p>
+            <p class="typewriter montserrat-regular">“Proyectos diseñados para durar, construidos con precisión y atención al detalle.”</p>
             <button class="montserrat-regular btn1" id="boton-home">Contactanos</button>
         </div>
     </div>
@@ -57,8 +59,8 @@
                 <h2 class="industry-bold">CONSTRUIR ES NUESTRA ESENCIA Y LO QUE NOS DEFINE</h2>
                 <p class="montserrat-thin">Con esfuerzo conjunto transformamos los mayores retos en éxitos para nuestros clientes y comunidades.</p>
                 <div class="button-inicio-container">
-                    <button class="montserrat-regular btn2">Sobre Nosotros</button>
-                    <button class="montserrat-regular btn3">Nuestros Proyectos</button>
+                    <button class="montserrat-regular btn2" id="sobre-nosotros-boton">Sobre Nosotros</button>
+                    <button class="montserrat-regular btn3" id="construcciones-boton">Nuestros Proyectos</button>
                 </div>
             </div>
             <div class="section-2-images">
@@ -74,6 +76,7 @@
 <div id="construcciones-section" class="hide">
     <div class="construcciones-container ">
         <h2 class="industry-bold title">CONSTRUCCIONES</h2>
+        <i class="fa fa-hand-pointer-o swipe-hand" aria-hidden="true"></i>
         <div class="proyectos-container" id="proyectosContainer">
             <!--Nombre Proyecto-->
             <div class="proyectos-lista">
@@ -86,14 +89,14 @@
                     <img src="img/arrow_back.webp" alt="" class="arrow-img hide">
                 </div>
                 <div class="proyecto-nombre" id="proyecto-aviles"> 
-                    <h3 class="industry-regular"><span class="industry-bold">03.</span> PROYECTO <br> AVILES</h3>
+                    <h3 class="industry-regular"><span class="industry-bold">03.</span> PROYECTO VIRREY AVILES</h3>
                     <img src="img/arrow_back.webp" alt="" class="arrow-img hide">
                 </div>
                 <div class="proyecto-nombre" id="proyecto-zabala"> 
                     <h3 class="industry-regular"><span class="industry-bold">04.</span> PROYECTO ZABALA</h3>
                     <img src="img/arrow_back.webp" alt="" class="arrow-img hide" >
                 </div>
-                <div class="proyecto-nombre" id="proyecto-zabala"> 
+                <div class="proyecto-nombre" id="proyecto-alvarezthomas"> 
                     <h3 class="industry-regular"><span class="industry-bold">05.</span> PROYECTO ALVAREZ THOMAS</h3>
                     <img src="img/arrow_back.webp" alt="" class="arrow-img hide" >
                 </div>
@@ -109,8 +112,9 @@
                     <!--Informacion Proyecto Invidiual-->
                     <div class="info-proyecto-container">
                         <h4 class="industry-regular">PROYECTO BURELA</h4>
-                        <p class="montserrat-regular">Proyecto ubicado en la calle Burela 3055, Villa Urquiza, CABA.</p>
-                        <p class="montserrat-regular">Este edificio cuenta con 24 unidades residenciales de 1, 2, 3 y 4 ambientes distribuidas en 8 pisos.</p>
+                        <p class="montserrat-regular"><i class="fa fa-map-marker" aria-hidden="true"></i>Burela 3055, Villa Urquiza, CABA.</p>
+                        <p class="montserrat-regular info-proyecto"><span class="montserrat-bold">Obra completada</span>. Un nuevo desarrollo finalizado con los más altos estándares de calidad.</p>
+                        <button class="industry-bold btn-proyecto" onclick="window.open('/pdf/BURELA-ORZA.pdf', '_blank')">VER INFORMACION</button>
                     </div>
                 </div>
 
@@ -122,8 +126,8 @@
                     <!--Informacion Proyecto Invidiual-->
                     <div class="info-proyecto-container">
                         <h4 class="industry-regular">PROYECTO VIRREY LORETO</h4>
-                        <p class="montserrat-regular">Primer proyecto realizado ubicado en la calle Virrey Loreto 3489.</p>
-                        <p class="montserrat-regular">Ubicado en el barrio de Colegiales, este edificio cuenta con una superficie de 1.013m² y 15 unidades de vivienda.</p>
+                        <p class="montserrat-regular"><i class="fa fa-map-marker" aria-hidden="true"></i>Virrey Loreto 3489, Colegiales, CABA.</p>
+                        <p class="montserrat-regular info-proyecto">Este proyecto ha sido <span class="montserrat-bold">terminado exitosamente</span>. Agradecemos la confianza de quienes lo hicieron posible.</p>
                     </div>
                 </div>
 
@@ -134,9 +138,10 @@
                     </div>
                     <!--Informacion Proyecto Invidiual-->
                     <div class="info-proyecto-container">
-                        <h4 class="industry-regular">PROYECTO AVILES</h4>
-                        <p class="montserrat-regular">Este proyecto comenzó a principios del 2023.</p>
-                        <p class="montserrat-regular"> Ubicado en la calle Aviles 2921, actualmente se encuentra en estado de excavación.</p>
+                        <h4 class="industry-regular">PROYECTO VIRREY AVILES</h4>
+                        <p class="montserrat-regular"><i class="fa fa-map-marker" aria-hidden="true"></i>Virrey Aviles 2921, Colegiales, CABA.</p>
+                        <p class="montserrat-regular info-proyecto"><span class="montserrat-bold">Proyecto finalizado</span>. Otro paso cumplido en nuestro compromiso con la excelencia constructiva.</p>
+                        <button class="industry-bold btn-proyecto" onclick="window.open('/pdf/VIRREYAVILES-ORZA.pdf', '_blank')">VER INFORMACION</button>
                     </div>
                 </div>
 
@@ -148,21 +153,23 @@
                     <!--Informacion Proyecto Invidiual-->
                     <div class="info-proyecto-container">
                         <h4 class="industry-regular">PROYECTO ZABALA</h4>
-                        <p class="montserrat-regular">Proyecto en estado de preventa.</p>
-                        <p class="montserrat-regular">Ubicado en la calle Zabala 3240, Colegiales, CABA.</p>
+                        <p class="montserrat-regular"><i class="fa fa-map-marker" aria-hidden="true"></i>Zabala 3240, Colegiales, CABA.</p>
+                        <p class="montserrat-regular info-proyecto">Actualmente en <span class="montserrat-bold">etapa de preventa</span>. La obra tiene fecha estimada de finalización en diciembre de 2025.</p>
+                        <button class="industry-bold btn-proyecto" onclick="window.open('/pdf/ZABALA-ORZA.pdf', '_blank')">VER INFORMACION</button>
                     </div>
                 </div>
 
                 <!--INFO ALVAREZ THOMAS-->
                 <div class="hide">
                     <!--Imagenes Proyecto Invdividual-->
-                    <div class="imagenes-proyecto-container proyecto-zabala">
+                    <div class="imagenes-proyecto-container proyecto-alvarezthomas">
                     </div>
                     <!--Informacion Proyecto Invidiual-->
                     <div class="info-proyecto-container">
                         <h4 class="industry-regular">PROYECTO ALVAREZ THOMAS</h4>
-                        <p class="montserrat-regular">Proyecto en estado de preventa.</p>
-                        <p class="montserrat-regular">Ubicado en la calle Zabala 3240, Colegiales, CABA.</p>
+                        <p class="montserrat-regular"><i class="fa fa-map-marker" aria-hidden="true"></i>Alvarez Thomas 1695, Villa Ortuzar, CABA.</p>
+                        <p class="montserrat-regular info-proyecto">Este desarrollo se encuentra actualmente en <span class="montserrat-bold">etapa de obra</span>. La finalización está prevista para abril de 2027.</p>
+                        <button class="industry-bold btn-proyecto" onclick="window.open('/pdf/ALVAREZTHOMAS-ORZA.pdf', '_blank')">VER INFORMACION</button>
                     </div>
                 </div>
             </div>
@@ -184,32 +191,30 @@
                 <!--DEMOLICIONES INFO-->
                 <div class="demoliciones-info" id="demoliciones-info">
                     <div class="info-left">
-                        <div class="info-left-img-demoliciones" id="img-demoliciones-1">
-                        </div>
+
+                        <img src="img/demoliciones1.webp" alt="">
                         <div class="info-text-left">
                             <p p class="montserrat-medium">Realizamos demoliciones parciales y totales con<span class="montserrat-semibold"> máxima seguridad, planificación y control.</span> Contamos con el equipamiento necesario para llevar a cabo cada tarea de forma eficiente, respetando las normativas vigentes y cuidando el entorno.</p>
                             <p p class="montserrat-medium">Nos ocupamos de cada detalle del proceso, desde la evaluación inicial hasta la disposición final de los residuos, garantizando un servicio <span class="montserrat-semibold">responsable y ordenado</span>, ideal para liberar terrenos y dar inicio a nuevas etapas constructivas.</p>
                         </div>
                     </div>
                     <div class="info-right">
-                        <div class="info-right-img-demoliciones" id="img-demoliciones-2">
-                        </div>
+
+                        <img src="img/demoliciones2.webp" alt="">
                     </div>
                 </div>
 
                 <!--MOVIMIENTOS INFO-->
                 <div class="movimientos-info hide" id="movimientos-info">
                     <div class="info-left">
-                        <div class="info-left-img-movimientos" id="img-movimientos-1">
-                        </div>
+                        <img src="img/movimientos1.webp" alt="">
                         <div class="info-text-left">
                             <p p class="montserrat-medium">Ofrecemos un servicio integral de movimiento de suelos, incluyendo <span class="montserrat-semibold">nivelación, compactación y preparación del terreno</span>. Trabajamos con maquinaria especializada para asegurar una base sólida y estable que optimice el desarrollo de la obra.</p>
                             <p p class="montserrat-medium">Este servicio es fundamental para garantizar la durabilidad y estabilidad de cualquier construcción, por eso priorizamos el <span class="montserrat-semibold">estudio del terreno y una ejecución precisa</span>, adaptada a las necesidades del proyecto y del entorno.</p>
                         </div>
                     </div>
                     <div class="info-right">
-                        <div class="info-right-img-movimientos" id="img-movimientos-2"> 
-                        </div>
+                        <img src="img/movimientos2.webp" alt="">
                     </div>
                 </div>
 
@@ -218,14 +223,14 @@
                 <!--EXCAVACIONES INFO-->
                 <div class="excavaciones-info hide" id="excavaciones-info">
                     <div class="info-left">
-                        <div class="info-left-img-excavaciones" id="img-excavaciones-1">
-                        </div>
+                        <img src="img/excavaciones1.webp" alt="">
                         <div class="info-text-left">
                             <p p class="montserrat-medium">Ejecutamos excavaciones para cimentaciones, sótanos, redes sanitarias y obras civiles en general. Nuestro equipo técnico garantiza precisión en cada etapa del proceso,<span class="montserrat-semibold"> adaptándose a las características del terreno y a los requerimientos del proyecto.</span> </p>
-                            <p p class="montserrat-medium">Utilizamos maquinaria especializada y técnicas seguras para intervenir distintos tipos de suelo,<span class="montserrat-semibold">minimizando riesgos y asegurando una base sólida</span>  para el desarrollo de la obra desde sus cimientos.</p>
+                            <p p class="montserrat-medium">Utilizamos maquinaria especializada y técnicas seguras para intervenir distintos tipos de suelo,<span class="montserrat-semibold"> minimizando riesgos y asegurando una base sólida</span>  para el desarrollo de la obra desde sus cimientos.</p>
                         </div>
                     </div>
-                    <div class="info-right-img-excavaciones" id="img-excavaciones-2">
+                    <div class="info-right">
+                    <img src="img/excavaciones2.webp" alt="">
                     </div>
                 </div>
 
@@ -283,7 +288,42 @@
         </div>
     </div>
     
-    
+
+
+
+        <!--TRABAJOS REALIZADOS 2DA SECCION-->
+        <div class="trabajos-second-section" id="trabajosSecondSection"> 
+            <div class="trabajos-second-container">
+                <div class="construccion-burela img-construccion">
+                    <h3 class="industry-bold">CONSTRUCCION</h3>
+                    <p class="industry-medium">Proyecto Burela</p>
+                </div>
+                <div class="demolicion-elcano img-servicios">
+                    <h3 class="industry-bold">DEMOLICION</h3>
+                    <p class="industry-medium">Av. Elcano 5024</p>
+                </div>
+                <div class="construccion-aviles img-construccion">
+                    <h3 class="industry-bold">CONSTRUCCION</h3>
+                    <p class="industry-medium">Proyecto Aviles</p>
+                </div>
+            </div>
+            <div class="trabajos-second-container">
+                <div class="excavacion-construye img-servicios">
+                    <h3 class="industry-bold">EXCAVACION</h3>
+                    <p class="industry-medium">AB CONSTRUYE SRL</p>
+                </div>
+                <div class="construccion-loreto img-construccion">
+                    <h3 class="industry-bold">CONSTRUCCION</h3>
+                    <p class="industry-medium">Proyecto Virrey Loreto</p>
+                </div>
+                <div class="demolicion-realtor img-servicios">
+                    <h3 class="industry-bold">DEMOLICION</h3>
+                    <p class="industry-medium">Total Realtor S.R.L</p>
+                </div>
+            </div>
+        </div>
+        
+            
     <!--EMPRESAS COLABORATIVAS-->
     <div class="empresas-container">
         <h3 class="industry-bold">EMPRESAS COLABORATIVAS</h3>
@@ -303,41 +343,6 @@
             </div>
         </div>
     </div>
-
-
-        <!--TRABAJOS REALIZADOS 2DA SECCION-->
-        <div class="trabajos-second-section" id="trabajosSecondSection"> 
-            <div class="trabajos-second-container">
-                <div class="construccion-burela">
-                    <h3 class="industry-bold">CONSTRUCCION</h3>
-                    <p class="industry-medium">Proyecto Burela</p>
-                </div>
-                <div class="demolicion-elcano">
-                    <h3 class="industry-bold">DEMOLICION</h3>
-                    <p class="industry-medium">Av. Elcano 5024</p>
-                </div>
-                <div class="construccion-aviles">
-                    <h3 class="industry-bold">CONSTRUCCION</h3>
-                    <p class="industry-medium">Proyecto Aviles</p>
-                </div>
-            </div>
-            <div class="trabajos-second-container">
-                <div class="excavacion-construye">
-                    <h3 class="industry-bold">EXCAVACION</h3>
-                    <p class="industry-medium">AB CONSTRUYE SRL</p>
-                </div>
-                <div class="construccion-loreto">
-                    <h3 class="industry-bold">CONSTRUCCION</h3>
-                    <p class="industry-medium">Proyecto Virrey Loreto</p>
-                </div>
-                <div class="demolicion-realtor">
-                    <h3 class="industry-bold">DEMOLICION</h3>
-                    <p class="industry-medium">Total Realtor S.R.L</p>
-                </div>
-            </div>
-        </div>
-        
-        
 </div>
 
 
@@ -395,7 +400,7 @@
     </div>
     <div class="noob-info">
         <p>Development by</p>
-        <img src="img/n00b 1.webp" alt="">
+        <img src="img/logo-noob.svg" alt="">
     </div>
 </div>
 

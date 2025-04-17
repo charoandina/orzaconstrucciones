@@ -13,6 +13,17 @@ function showSection(section) {
   if (sectionToShow) {
     sectionToShow.classList.remove("hide");
     sectionToShow.classList.add("show");
+
+      // Si la sección es 'construcciones', ocultar la manito después de 5 segundos
+  if (section === 'construcciones') {
+    setTimeout(() => {
+      const hand = document.querySelector('.swipe-hand');
+      if (hand) {
+        hand.classList.add('hide'); // usar clase si estás haciendo fade
+        // o directamente: hand.style.display = 'none';
+      }
+    }, 5000);
+  }
   }
 
   // Eliminar la clase 'active' de todos los elementos li
@@ -62,6 +73,24 @@ document.getElementById("boton-home").addEventListener("click", () => {
   target.scrollIntoView({ behavior: "smooth" });
 });
 
+/* REDIRECCTION BOTONES SOBRE NOSOTROS / NUESTROS PROYECTOS */
+
+document.getElementById('sobre-nosotros-boton').addEventListener('click', function () {
+  showSection("nosotros");
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+});
+
+document.getElementById('construcciones-boton').addEventListener('click', function () {
+  showSection("construcciones");
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+});
+
 /* FUNCIONAMIENTO NAVBAR SERVICIOS */
 document.addEventListener("DOMContentLoaded", () => {
   const navItems = document.querySelectorAll(".nav-list li");
@@ -88,6 +117,9 @@ document.addEventListener("DOMContentLoaded", () => {
     navList.classList.toggle("open");
   });
 });
+
+
+
 
 /* CONSTRUCCIONES - FUNCION NAVBAR */
 // Obtener elementos de la lista de proyectos y contenedor padre
@@ -347,3 +379,26 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 });
+
+/* REDIRECCION IMAGENES NOSOTROS */
+
+document.querySelectorAll('.img-construccion').forEach(function (img) {
+  img.addEventListener('click', function () {
+    showSection("construcciones");
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+});
+
+document.querySelectorAll('.img-servicios').forEach(function (img) {
+  img.addEventListener('click', function () {
+    showSection("servicios");
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+});
+
