@@ -794,6 +794,7 @@ body {
   margin-top: 60px;
   margin-bottom: 60px;
   opacity: 0;
+  flex-wrap: wrap;
 }
 
 .trabajos-second-container {
@@ -802,6 +803,7 @@ body {
   justify-content: space-between;
   align-items: center;
   margin-top: 20px;
+  flex-wrap: wrap;
 }
 .trabajos-second-container {
   opacity: 0;
@@ -1371,6 +1373,9 @@ footer {
   .swipe-hand{
     display: none;
   }
+  .btn-proyecto{
+    margin-top: 10%;
+  }
 }
 
 /* MEDIA Q - SERVICIOS  */
@@ -1411,30 +1416,132 @@ footer {
     width: 100%;
   }
 }
-/*
-@media (min-width: 628px) and (max-width: 920px) {
-  .info-right,.info-right-img-excavaciones{
-    display: none;
+
+/* MEDIA Q - SOBRE NOSOTROS  */
+
+@media (min-width: 320px) and (max-width: 629px) {
+  .nosotros-container{
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 0;
   }
-  .servicios-info-container{
+  .trabajos-second-section{
+    width: 100%;
+    gap: 10px;
+  }
+  .sobrenosotros-container {
+    width: 100%;
+  }
+.text-right p {
+  font-size: 16px;
+  line-height: 32px;
+  padding: 0px 10px;
+  }
+  .counters {
+  gap: 30px;
+  justify-content: center;
+  }
+  .counter {
+  text-align: center;
+  }
+  .nosotros-right {
+  gap: 40px;
+  }
+  .trabajos-second-container {
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 0;
+  }
+  .carousel-track {
+    gap: 60px;
+  }
+  .nosotros-left {
+    max-width: none;
     width: 95%;
   }
-  .info-left {
+  .nosotros-left-img{
+    margin: auto;
+  }
+} 
+
+@media (min-width: 629px) and (max-width: 768px) {
+  .trabajos-second-container div {
+    width: 180px;
+    height: 180px;
+  }
+  .nosotros-left {
+    flex-direction: row;
+    max-width: none;
+    align-items: center;
+    padding: 0 10px;
+  }
+  .nosotros-container {
+    flex-direction: column;
+  }
+  .sobrenosotros-container{
     width: 100%;
+  }
+  .nosotros-left-img {
+    width: 100%;
+  }
+  .nosotros-left p {
+    text-align: right;
+  }
+  .text-right {
+    padding: 0 10px;
+  }
+  .counters {
+    gap: 15px;
+  }
+  .counter{
+    text-align: center;
+  }
+  .trabajos-second-section {
+    width: 95%;
+    margin-top: 0;
+  }
+  .trabajos-second-container{
+    margin-top: 0;
+    gap: 15px;
+  }
+  .sobrenosotros-container{
+    margin-bottom: 0;
   }
 }
 
-@media (min-width: 921px) and (max-width: 1000px) {
-  .servicios-info-container{
+@media (min-width: 768px) and (max-width: 1200px) {
+  .trabajos-second-container div{
+    width: 220px;
+    height: 220px;
+  }
+  .trabajos-second-section {
+    width: 95%;
+    margin-top: 0;
+  }
+  .nosotros-container {
+    flex-direction: column;
+  }
+  .nosotros-left {
+    flex-direction: row;
+    max-width: none;
+    align-items: center;
+    padding: 0 30px;
+  }
+  .nosotros-container {
+    flex-direction: column;
+  }
+  .sobrenosotros-container{
     width: 100%;
   }
-  .info-right,.info-right-img-excavaciones{
-    display: block;
+  .nosotros-left-img {
+    width: 100%;
   }
-  .demoliciones-info, .movimientos-info, .excavaciones-info {
-    align-items: flex-start;
-}
-.info-left {
-  width: 48%;
-}
+  .nosotros-left p {
+    text-align: right;
+  }
+  .text-right {
+    padding: 0 30px;
+  }
 }
